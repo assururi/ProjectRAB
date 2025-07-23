@@ -142,22 +142,22 @@ gambat_material_per_gardu = {
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir":  "Bagian_Gardu/GarduCantol/GARDU CANTOL-Tiang GC.png",
     },
     "Gardu Portal": {
-        "Pasang TM - 1 B/H ( TIANG TUMPU )": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Connector(2) GP.drawio.png",
-        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Penghalang Panjat GP.drawio.png",
-        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Tanda Kilat Kecil GP.drawio.png",
-        "Penomoran Tiang TM": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Penomoran Tiang GP.drawio.png",
-        "Pasang rangka gardu Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Rangka Gardu GP.drawio.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Jaringan TR & Pipa GP.drawio.png",
-        "Pasang trafo 200 - 250 kVA": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Trafo GP.drawio.png",
-        "Pasang Arrester + Jumper": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Arrester GP.drawio.png",
-        "Pasang Cut Out + Jumper": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-FCO GP.drawio.png",
-        "Pasang Cover Arrester": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Cover Arrester GP.drawio.png",
-        "Pembuatan pondasi gardu Portal":"/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-pondasi GP.drawio.png",
-        "Pemasangan Panel PHB-TR": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-PHBTR GP.drawio.png",
-        "Pembuatan Nama dan logo gardu": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Nama dan Logo Gardu GP.drawio.png",
+        "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Connector(2) GP.drawio.png",
+        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Penghalang Panjat GP.drawio.png",
+        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Tanda Kilat Kecil GP.drawio.png",
+        "Penomoran Tiang TM": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Penomoran Tiang GP.drawio.png",
+        "Pasang rangka gardu Portal": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Rangka Gardu GP.drawio.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Jaringan TR & Pipa GP.drawio.png",
+        "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Trafo GP.drawio.png",
+        "Pasang Arrester + Jumper": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Arrester GP.drawio.png",
+        "Pasang Cut Out + Jumper": "Bagian_Gardu/GarduPortal/GARDU PORTAL-FCO GP.drawio.png",
+        "Pasang Cover Arrester": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Cover Arrester GP.drawio.png",
+        "Pembuatan pondasi gardu Portal":"Bagian_Gardu/GarduPortal/GARDU PORTAL-pondasi GP.drawio.png",
+        "Pemasangan Panel PHB-TR": "Bagian_Gardu/GarduPortal/GARDU PORTAL-PHBTR GP.drawio.png",
+        "Pembuatan Nama dan logo gardu": "Bagian_Gardu/GarduPortal/GARDU PORTAL-Nama dan Logo Gardu GP.drawio.png",
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir":[
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Tiang KANAN GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-tiang KIRI GP.drawio.png"
+            "Bagian_Gardu/GarduPortal/GARDU PORTAL-Tiang KANAN GP.drawio.png",
+            "Bagian_Gardu/GarduPortal/GARDU PORTAL-tiang KIRI GP.drawio.png"
         ]
 
     },
