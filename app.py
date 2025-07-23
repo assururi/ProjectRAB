@@ -36,7 +36,7 @@ if not st.session_state.logged_in:
 
 # Tombol logout di sidebar jika sudah login
 with st.sidebar:
-    st.image("/content/drive/MyDrive/Bagian_Gardu/Logo_PLN.png", width=120)  
+    st.image("Bagian_Gardu/Logo_PLN.png", width=120)  
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
