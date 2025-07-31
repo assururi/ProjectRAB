@@ -466,7 +466,7 @@ with col_input:
             
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
-            st.session_state.df_dropdown_state,
+            df_dropdown,
             
             use_container_width=True,
             column_config={
