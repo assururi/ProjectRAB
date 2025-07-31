@@ -41,7 +41,7 @@ if not st.session_state.logged_in:
     st.stop()
 
 with st.sidebar:
-    st.image("/content/drive/MyDrive/Bagian_Gardu/Logo_PLN.png", width=120)
+    st.image("Bagian_Gardu/Logo_PLN.png", width=120)
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
@@ -99,7 +99,7 @@ gardu_data = {
             "LA;24-24kV;1kA;Polymer": 606990,
             "CUT OUT;24kV;100A;Polymer-125kV": 1164370.00
         },
-         "image": "/content/drive/MyDrive/Bagian_Gardu/GarduCantol/StrukturGarduCantol.jpg"
+         "image": "Bagian_Gardu/GarduCantolRevisi/StrukturGarduCantol.jpg"
     },
     "Gardu Portal": {
         "material": {
@@ -150,7 +150,7 @@ gardu_data = {
             "CUT OUT;24kV;6-100A;POLYMER-125kV": 1164370,
             "CUT OUT ACC;FUSE LINK 26 kV 8A": 19980
         },
-        "image": "/content/drive/MyDrive/Bagian_Gardu/GarduPortal/GARDU PORTAL-Full lengkap GP.drawio.png"
+        "image": "Bagian_Gardu/GarduPortalRevisi/GARDU PORTAL-Full lengkap GP.drawio.png"
     },
     "Gardu Garpor": {
         "material dan jasa": {
@@ -170,84 +170,84 @@ gambat_material_per_gardu = {
         "Trafo 100 kVA": "path_image",
     },
     "Gardu Cantol": {
-        "Pasang TM - 1 B/H ( TIANG TUMPU )": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B H ( TIANG TUMPU ) GC.png",
-        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-PENGHALANG PANJAT GC.png",
-        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TANDA KILAT KECIL GC.png",
-        "Penomoran Tiang TM": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Penomoran Tiang TM GC.png",
-        "Pasang rangka gardu Cantol": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Rangka gardu cantol GC.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-hardware, isolator, pipa, PGTM TR Cantol GC.png",
-        "Pasang trafo 200 - 250 kVA": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-trafo 200 - 250 kVA GC (1).png",
+        "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B H ( TIANG TUMPU ) GC.png",
+        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-PENGHALANG PANJAT GC.png",
+        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TANDA KILAT KECIL GC.png",
+        "Penomoran Tiang TM": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Penomoran Tiang TM GC.png",
+        "Pasang rangka gardu Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Rangka gardu cantol GC.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-hardware, isolator, pipa, PGTM TR Cantol GC.png",
+        "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-trafo 200 - 250 kVA GC (1).png",
         "Pasang Arrester + Jumper": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 1 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 2 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 3 GC.png"
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 1 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 2 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 3 GC.png"
         ],
         "Pasang Cut Out + Jumper": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 1 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 2 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 3 GC.png"
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 1 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 2 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL- Cut Out + Jumper 3 GC.png"
         ],
         "Pasang Cover Bushing Trafo": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 1 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 2 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 3 GC.png"
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 1 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 2 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Cover Bushing Trafo 3 GC.png"
         ],
-        "Pembuatan pondasi gardu Cantol": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Pondasi gardu cantol GC.png",
-        "Pembuatan Nama dan logo gardu": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Nama dan logo GC.png",
-        "Pasang Pentanahan TM Gardu Cantol": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Pentanahan TM Gardu Cantol GC.png",
+        "Pembuatan pondasi gardu Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Pondasi gardu cantol GC.png",
+        "Pembuatan Nama dan logo gardu": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Nama dan logo GC.png",
+        "Pasang Pentanahan TM Gardu Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Pentanahan TM Gardu Cantol GC.png",
         "Pasang Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 1 GC.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 2 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 1 GC.png",
+            "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 2 GC.png",
         ],
-        "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": "/content/drive/MyDrive/Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Tiang GC.png"
+        "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Tiang GC.png"
     },
     "Gardu Portal":{
         "Pasang TM - 1 B/H ( TIANG TUMPU )": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 2 GP.drawio.png"
         ],
         "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penghalang Panjat 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penghalang Panjat 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penghalang Panjat 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penghalang Panjat 2 GP.drawio.png"
         ],
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Tanda Kilat Kecil 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Tanda Kilat Kecil 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Tanda Kilat Kecil 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Tanda Kilat Kecil 2 GP.drawio.png"
         ],
         "Penomoran Tiang TM": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 2 GP.drawio.png"
         ],
-        "Pasang rangka gardu Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Rangka Gardu Portal GP.drawio.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Hardware, isolator, pipa, PGTM TR Portal GP.drawio.png",
-        "Pasang trafo 200 - 250 kVA": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Trafo 200 - 250 kVA GP.drawio.png",
+        "Pasang rangka gardu Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Rangka Gardu Portal GP.drawio.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Hardware, isolator, pipa, PGTM TR Portal GP.drawio.png",
+        "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Trafo 200 - 250 kVA GP.drawio.png",
         "Pasang Arrester + Jumper": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 2 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 3 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 2 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 3 GP.drawio.png"
         ],
         "Pasang Cut Out + Jumper": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 2 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 3 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 2 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cut Out + Jumper 3 GP.drawio.png"
         ],
         "Pasang Cover Bushing Trafo": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 2 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 3 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 2 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Cover Bushing Trafo 3 GP.drawio.png"
         ],
-        "Pembuatan pondasi gardu Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-pondasi gardu Portal GP.drawio.png",
-        "Pembuatan Nama dan logo gardu": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Nama dan Logo Gardu GP.drawio.png",
-        "Pasang Pentanahan Ganda TM Gardu Portal": "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Pentanahan Ganda TM Gardu Portal GP.drawio.png",
+        "Pembuatan pondasi gardu Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-pondasi gardu Portal GP.drawio.png",
+        "Pembuatan Nama dan logo gardu": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Nama dan Logo Gardu GP.drawio.png",
+        "Pasang Pentanahan Ganda TM Gardu Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Pentanahan Ganda TM Gardu Portal GP.drawio.png",
         "Pasang Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 2 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 4 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 2 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 4 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat GP.drawio.png"
         ],
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": [
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 1 GP.drawio.png",
-            "/content/drive/MyDrive/Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 2 GP.drawio.png"
         ]
     },
     "Gardu Garpor":{
