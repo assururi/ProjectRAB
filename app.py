@@ -467,7 +467,6 @@ with col_input:
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
             st.session_state.df_dropdown_state,
-            use_container_width=True,
             df_dropdown,
             use_container_width=True,
             column_config={
@@ -491,7 +490,6 @@ with col_input:
             st.session_state.df_numeric_state,
             use_container_width=True,
             df_numeric,
-            use_container_width=True,
             column_config={
                 "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
                 "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
