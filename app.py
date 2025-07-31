@@ -170,7 +170,7 @@ gambat_material_per_gardu = {
         "Trafo 100 kVA": "path_image",
     },
     "Gardu Cantol": {
-        "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B H ( TIANG TUMPU ) GC.png",
+        "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B_H ( TIANG TUMPU ) GC.png",
         "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-PENGHALANG PANJAT GC.png",
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TANDA KILAT KECIL GC.png",
         "Penomoran Tiang TM": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Penomoran Tiang TM GC.png",
@@ -203,8 +203,8 @@ gambat_material_per_gardu = {
     },
     "Gardu Portal":{
         "Pasang TM - 1 B/H ( TIANG TUMPU )": [
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 1 GP.drawio.png",
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B H ( TIANG TUMPU ) 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B_H ( TIANG TUMPU ) 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TM - 1 B_H ( TIANG TUMPU ) 2 GP.drawio.png"
         ],
         "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penghalang Panjat 1 GP.drawio.png",
@@ -219,7 +219,7 @@ gambat_material_per_gardu = {
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 2 GP.drawio.png"
         ],
         "Pasang rangka gardu Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Rangka Gardu Portal GP.drawio.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Hardware, isolator, pipa, PGTM TR Portal GP.drawio.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Hardware, isolator, pipa, PGTM_TR Portal GP.drawio.png",
         "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Trafo 200 - 250 kVA GP.drawio.png",
         "Pasang Arrester + Jumper": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 1 GP.drawio.png",
@@ -246,8 +246,8 @@ gambat_material_per_gardu = {
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat GP.drawio.png"
         ],
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": [
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 1 GP.drawio.png",
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m 350 daN (terpasang) + Lansir 2 GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 1 GP.drawio.png",
+            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 2 GP.drawio.png"
         ]
     },
     "Gardu Garpor":{
