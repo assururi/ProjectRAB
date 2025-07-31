@@ -47,7 +47,7 @@ with st.sidebar:
         st.rerun()
     if st.button("Reset Kebutuhan"):
         st.session_state.reset_trigger = True
-        st.experimental_rerun()
+        st.rerun()
 
 # =========================
 # DATA HARGA & GAMBAR
