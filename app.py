@@ -7,7 +7,7 @@ import pandas as pd
 # =========================
 # KONFIGURASI DASAR
 # =========================
-st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="⚡")
+st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="Logo_PLN.png")
 
 # =========================
 # ========== LOGIN =========
