@@ -45,6 +45,9 @@ with st.sidebar:
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
+    if st.button("Reset Kebutuhan"):
+    st.session_state.reset_trigger = True
+    st.experimental_rerun()
 
 # =========================
 # DATA HARGA & GAMBAR
@@ -440,6 +443,9 @@ if "df_dropdown_state" not in st.session_state:
 if "df_numeric_state" not in st.session_state:
     st.session_state.df_numeric_state = df_numeric.copy()
 
+if "reset_trigger" not in st.session_state:
+    st.session_state.reset_trigger = False
+
 # Pilihan dropdown sesuai gardu
 if selected_gardu == "Gardu Portal":
     pilihan_jumlah = [0, 1, 2, 3, 4]
@@ -459,12 +465,13 @@ with col_input:
 
     if len(df_dropdown):
         
-        if st.session_state.reset_trigger:
-            df_dropdown["KEBUTUHAN"] = 0
-            df_numeric["KEBUTUHAN"] = 0
-            st.session_state.reset_trigger = False  # kembalikan ke False
+ 
             
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
+        if st.session_state.reset_trigger:
+            st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
+            st.session_state.df_numeric_state["KEBUTUHAN"] = 0
+            st.session_state.reset_trigger = False
         edited_dropdown = st.data_editor(
             df_dropdown,
             
@@ -481,12 +488,13 @@ with col_input:
         edited_dropdown = pd.DataFrame(columns=df_dropdown.columns)
 
     if len(df_numeric):
-        if st.session_state.reset_trigger:
-            df_dropdown["KEBUTUHAN"] = 0
-            df_numeric["KEBUTUHAN"] = 0
-            st.session_state.reset_trigger = False  # kembalikan ke False
+
+    
             
         st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
+        st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
+            st.session_state.df_numeric_state["KEBUTUHAN"] = 0
+            st.session_state.reset_trigger = False
         edited_numeric = st.data_editor(
                 st.session_state.df_numeric_state,
                 use_container_width=True,
