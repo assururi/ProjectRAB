@@ -7,7 +7,7 @@ import pandas as pd
 # =========================
 # KONFIGURASI DASAR
 # =========================
-st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="\Bagian_Gardu\Logo_PLN.png")
+st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="Bagian_Gardu/Logo_PLN.png")
 
 # =========================
 # ========== LOGIN =========
@@ -398,7 +398,7 @@ def reset_all():
     st.session_state.reset_trigger = True
 
 # Tombol Reset
-st.button("🔄 Reset Semua Input", on_click=reset_all)
+st.button("Reset Semua Input", on_click=reset_all)
 
 # =========================
 # PILIH GARDU
