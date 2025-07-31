@@ -395,8 +395,8 @@ if "reset_trigger" not in st.session_state:
     st.session_state.reset_trigger = False
 
 def reset_all():
-    st.session_state.reset_trigger = True
-
+    st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
+    st.session_state.df_numeric_state["KEBUTUHAN"] = 0
 # Tombol Reset
 st.button("Reset Semua Input", on_click=reset_all)
 
@@ -433,6 +433,13 @@ numeric_items  = [m for m in df_input["NAMA MATERIAL"] if is_length_based(m)]
 df_dropdown = pd.DataFrame({"NAMA MATERIAL": dropdown_items, "KEBUTUHAN": [0] * len(dropdown_items)})
 df_numeric  = pd.DataFrame({"NAMA MATERIAL": numeric_items,  "KEBUTUHAN": [0] * len(numeric_items)})
 
+# Inisialisasi state untuk menyimpan input
+if "df_dropdown_state" not in st.session_state:
+    st.session_state.df_dropdown_state = df_dropdown.copy()
+
+if "df_numeric_state" not in st.session_state:
+    st.session_state.df_numeric_state = df_numeric.copy()
+
 # Pilihan dropdown sesuai gardu
 if selected_gardu == "Gardu Portal":
     pilihan_jumlah = [0, 1, 2, 3, 4]
@@ -451,6 +458,7 @@ with col_input:
     st.markdown("### Input Kebutuhan Material")
 
     if len(df_dropdown):
+        
         if st.session_state.reset_trigger:
             df_dropdown["KEBUTUHAN"] = 0
             df_numeric["KEBUTUHAN"] = 0
@@ -458,6 +466,8 @@ with col_input:
             
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
+            st.session_state.df_dropdown_state,
+            use_container_width=True,
             df_dropdown,
             use_container_width=True,
             column_config={
@@ -478,6 +488,8 @@ with col_input:
             st.session_state.reset_trigger = False  # kembalikan ke False
         st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
         edited_numeric = st.data_editor(
+            st.session_state.df_numeric_state,
+            use_container_width=True,
             df_numeric,
             use_container_width=True,
             column_config={
@@ -492,6 +504,7 @@ with col_input:
     # Gabungkan kembali & urut sesuai df_input awal
     edited_df = pd.concat([edited_dropdown, edited_numeric], ignore_index=True)
     edited_df = edited_df.set_index("NAMA MATERIAL").reindex(df_input["NAMA MATERIAL"]).reset_index()
+    
 
 # =========================
 # VISUALISASI DINAMIS
