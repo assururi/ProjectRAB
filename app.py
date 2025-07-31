@@ -492,7 +492,8 @@ with col_input:
     
             
         st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
-        st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
+        if st.session_state.reset_trigger:
+            st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
             st.session_state.df_numeric_state["KEBUTUHAN"] = 0
             st.session_state.reset_trigger = False
         edited_numeric = st.data_editor(
