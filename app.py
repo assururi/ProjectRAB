@@ -451,15 +451,18 @@ with col_input:
     st.markdown("### Input Kebutuhan Material")
 
     if len(df_dropdown):
+        if st.session_state.reset_trigger:
+            df_dropdown["KEBUTUHAN"] = 0
+            df_numeric["KEBUTUHAN"] = 0
+            st.session_state.reset_trigger = False  # kembalikan ke False
+            
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
             df_dropdown,
             use_container_width=True,
             column_config={
                 "KEBUTUHAN": st.column_config.SelectboxColumn(
-                    "KEBUTUHAN",
-                    options=pilihan_jumlah,
-                    default=0
+                "KEBUTUHAN", options=pilihan_jumlah, default=0
                 ),
                 "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
             },
@@ -469,6 +472,10 @@ with col_input:
         edited_dropdown = pd.DataFrame(columns=df_dropdown.columns)
 
     if len(df_numeric):
+        if st.session_state.reset_trigger:
+            df_dropdown["KEBUTUHAN"] = 0
+            df_numeric["KEBUTUHAN"] = 0
+            st.session_state.reset_trigger = False  # kembalikan ke False
         st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
         edited_numeric = st.data_editor(
             df_numeric,
