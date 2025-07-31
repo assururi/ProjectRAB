@@ -467,7 +467,7 @@ with col_input:
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
             st.session_state.df_dropdown_state,
-            df_dropdown,
+            
             use_container_width=True,
             column_config={
                 "KEBUTUHAN": st.column_config.SelectboxColumn(
@@ -485,15 +485,15 @@ with col_input:
             df_dropdown["KEBUTUHAN"] = 0
             df_numeric["KEBUTUHAN"] = 0
             st.session_state.reset_trigger = False  # kembalikan ke False
+            
         st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
         edited_numeric = st.data_editor(
-            st.session_state.df_numeric_state,
-            use_container_width=True,
-            df_numeric,
-            column_config={
-                "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
-                "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
-            },
+                st.session_state.df_numeric_state,
+                use_container_width=True,
+                column_config={
+                    "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
+                    "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
+                },
             hide_index=True
         )
     else:
