@@ -46,8 +46,8 @@ with st.sidebar:
         st.session_state.logged_in = False
         st.rerun()
     if st.button("Reset Kebutuhan"):
-    st.session_state.reset_trigger = True
-    st.experimental_rerun()
+        st.session_state.reset_trigger = True
+        st.experimental_rerun()
 
 # =========================
 # DATA HARGA & GAMBAR
