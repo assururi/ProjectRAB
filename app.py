@@ -557,6 +557,9 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # =============== #
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
+
+start_row = 13
+
 for index, row in df.iterrows():
     # Kolom D - NAMA MATERIAL
     nama_material = row.get("NAMA MATERIAL")
