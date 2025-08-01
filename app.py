@@ -558,16 +558,25 @@ total_anggaran = df["TOTAL HARGA"].sum()
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
 
-start_row = 9
+start_row = 9  # sesuaikan dengan baris awal pada template Excel
+
 for index, row in df.iterrows():
-    if pd.notnull(row["NAMA MATERIAL"]):
-        ws[f'D{start_row}'] = row["NAMA MATERIAL"]
-    if pd.notnull(row["KEBUTUHAN"]):
-        ws[f'G{start_row}'] = row["KEBUTUHAN"]
-    if pd.notnull(row["HARGA SATUAN"]):
-        ws[f'I{start_row}'] = row["HARGA SATUAN"]
-    if pd.notnull(row["TOTAL HARGA"]):
-        ws[f'K{start_row}'] = row["TOTAL HARGA"]
+    # Kolom D - NAMA MATERIAL
+    if "NAMA MATERIAL" in row and pd.notnull(row["NAMA MATERIAL"]):
+        ws[f'D{start_row}'] = str(row["NAMA MATERIAL"])
+
+    # Kolom G - KEBUTUHAN
+    if "KEBUTUHAN" in row and pd.notnull(row["KEBUTUHAN"]):
+        ws[f'G{start_row}'] = float(row["KEBUTUHAN"])
+
+    # Kolom I - HARGA SATUAN
+    if "HARGA SATUAN" in row and pd.notnull(row["HARGA SATUAN"]):
+        ws[f'I{start_row}'] = float(row["HARGA SATUAN"])
+
+    # Kolom K - TOTAL HARGA
+    if "TOTAL HARGA" in row and pd.notnull(row["TOTAL HARGA"]):
+        ws[f'K{start_row}'] = float(row["TOTAL HARGA"])
+
     start_row += 1
 
 # Simpan ke dalam memori (stream) untuk diunduh
