@@ -430,7 +430,8 @@ df_input = pd.DataFrame({
 # Bagi material berdasarkan jenis input
 dropdown_items = [m for m in df_input["NAMA MATERIAL"] if not is_length_based(m)]
 numeric_items  = [m for m in df_input["NAMA MATERIAL"] if is_length_based(m)]
-
+st.write("🔍 Deteksi Material Kabel (is_length_based):")
+st.write(numeric_items)
 df_dropdown = pd.DataFrame({"NAMA MATERIAL": dropdown_items, "KEBUTUHAN": [0] * len(dropdown_items)})
 df_numeric  = pd.DataFrame({"NAMA MATERIAL": numeric_items,  "KEBUTUHAN": [0] * len(numeric_items)})
 
