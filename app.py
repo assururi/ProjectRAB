@@ -558,30 +558,24 @@ st.write("Isi DataFrame yang akan ditulis:", df)
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
 
-start_row = 42
+start_row = 43
 
-for index, row in df.iterrows():
-    # Kolom D - NAMA MATERIAL
-    nama_material = row.get("NAMA MATERIAL")
-    if pd.notna(nama_material):
-        ws[f'D{start_row}'] = str(nama_material)
-
-    # Kolom G - KEBUTUHAN
+for i, (_, row) in enumerate(df.iterrows()):
+    row_num = start_row + i
+    
+    nama_material = row.get("NAMA MATERIAL", "")
     kebutuhan = pd.to_numeric(row.get("KEBUTUHAN", 0), errors="coerce")
-    if not pd.isna(kebutuhan):
-        ws[f'G{start_row}'] = kebutuhan
-
-    # Kolom I - HARGA SATUAN
     harga_satuan = pd.to_numeric(row.get("HARGA SATUAN", 0), errors="coerce")
-    if not pd.isna(harga_satuan):
-        ws[f'I{start_row}'] = harga_satuan
-
-    # Kolom K - TOTAL HARGA
     total_harga = pd.to_numeric(row.get("TOTAL HARGA", 0), errors="coerce")
-    if not pd.isna(total_harga):
-        ws[f'K{start_row}'] = total_harga
-
-    start_row += 1
+    
+    if pd.notna(nama_material):
+        ws[f'D{row_num}'] = str(nama_material)
+    if pd.notna(kebutuhan):
+        ws[f'G{row_num}'] = kebutuhan
+    if pd.notna(harga_satuan):
+        ws[f'I{row_num}'] = harga_satuan
+    if pd.notna(total_harga):
+        ws[f'K{row_num}'] = total_harga
 
 # Simpan ke dalam memori (stream) untuk diunduh
 output = BytesIO()
