@@ -555,41 +555,34 @@ st.write("Isi DataFrame yang akan ditulis:", df)
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
-wb = openpyxl.load_workbook(template_path)
+template_path = "TemplateRAB_Percobaan1.xlsx"
+output = BytesIO()
+
+# Load template
+wb = load_workbook(template_path)
 ws = wb.active
 
+# Mulai menulis dari baris 43
 start_row = 43
 
 for i, (_, row) in enumerate(df.iterrows()):
     row_num = start_row + i
-    
-    nama_material = row.get("NAMA MATERIAL", "")
-    kebutuhan = pd.to_numeric(row.get("KEBUTUHAN", 0), errors="coerce")
-    harga_satuan = pd.to_numeric(row.get("HARGA SATUAN", 0), errors="coerce")
-    total_harga = pd.to_numeric(row.get("TOTAL HARGA", 0), errors="coerce")
-    
-    if pd.notna(nama_material):
-        ws[f'D{row_num}'] = str(nama_material)
-    if pd.notna(kebutuhan):
-        ws[f'G{row_num}'] = kebutuhan
-    if pd.notna(harga_satuan):
-        ws[f'I{row_num}'] = harga_satuan
-    if pd.notna(total_harga):
-        ws[f'K{row_num}'] = total_harga
+    ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
+    ws[f'G{row_num}'] = float(row["KEBUTUHAN"])
+    ws[f'I{row_num}'] = float(row["HARGA SATUAN"])
+    ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
 
-# Simpan ke dalam memori (stream) untuk diunduh
-output = BytesIO()
+# Simpan ke BytesIO
 wb.save(output)
-output.seek(0)
+output.seek(0)  # <-- Penting!
 
-# Streamlit download button
+# Tombol Download
 st.download_button(
-    label="Download Laporan RAB (Excel)",
+    label="📥 Download Laporan RAB (Excel)",
     data=output,
     file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
-
 # Tampilan DataFrame dan total anggaran
 st.markdown("### Tabel RAB")
 st.dataframe(df, use_container_width=True)
