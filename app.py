@@ -45,9 +45,6 @@ with st.sidebar:
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
-    if st.button("Reset Kebutuhan"):
-        st.session_state.reset_trigger = True
-        st.rerun()
 
 # =========================
 # DATA HARGA & GAMBAR
@@ -400,8 +397,9 @@ if "reset_trigger" not in st.session_state:
 def reset_all():
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
-# Tombol Reset
-st.button("Reset Semua Input", on_click=reset_all)
+if st.button("Reset Kebutuhan"):
+        st.session_state.reset_trigger = True
+        st.rerun()
 
 # =========================
 # PILIH GARDU
@@ -491,7 +489,7 @@ with col_input:
 
     
             
-        st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN ) **")
+        st.markdown("Material Kabel / Konduktor (Tabel Volume PLN )")
         if st.session_state.reset_trigger:
             st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
             st.session_state.df_numeric_state["KEBUTUHAN"] = 0
