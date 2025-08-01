@@ -558,14 +558,16 @@ total_anggaran = df["TOTAL HARGA"].sum()
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
 
-# Mulai dari baris ke-10 (setelah header di baris 9)
-start_row = 10
-st.markdown(df.columns)
-for i, row in df.iterrows():
-    ws[f'D{start_row}'] = row["NAMA MATERIAL"]
-    ws[f'H{start_row}'] = row["KEBUTUHAN"]
-    ws[f'J{start_row}'] = row["HARGA SATUAN"]
-    ws[f'K{start_row}'] = row["TOTAL HARGA"]
+start_row = 9
+for index, row in df.iterrows():
+    if pd.notnull(row["NAMA MATERIAL"]):
+        ws[f'D{start_row}'] = row["NAMA MATERIAL"]
+    if pd.notnull(row["KEBUTUHAN"]):
+        ws[f'G{start_row}'] = row["KEBUTUHAN"]
+    if pd.notnull(row["HARGA SATUAN"]):
+        ws[f'I{start_row}'] = row["HARGA SATUAN"]
+    if pd.notnull(row["TOTAL HARGA"]):
+        ws[f'K{start_row}'] = row["TOTAL HARGA"]
     start_row += 1
 
 # Simpan ke dalam memori (stream) untuk diunduh
