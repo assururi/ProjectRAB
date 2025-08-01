@@ -558,7 +558,7 @@ total_anggaran = df["TOTAL HARGA"].sum()
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
 
-start_row = 13
+start_row = 42
 
 for index, row in df.iterrows():
     # Kolom D - NAMA MATERIAL
@@ -590,7 +590,7 @@ output.seek(0)
 
 # Streamlit download button
 st.download_button(
-    label="⬇️ Download Laporan RAB (Excel)",
+    label="Download Laporan RAB (Excel)",
     data=output,
     file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
