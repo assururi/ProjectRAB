@@ -462,13 +462,12 @@ else:
 col_input, col_vis = st.columns([1.2, 1])
 with col_input:
     st.markdown("### Input Kebutuhan Material")
-
-    if len(df_dropdown):
-        st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
-        if st.session_state.reset_trigger:
+    if st.session_state.reset_trigger:
             st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
             st.session_state.df_numeric_state["KEBUTUHAN"] = 0
             st.session_state.reset_trigger = False
+    if len(df_dropdown):
+        st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
             df_dropdown,
             
@@ -483,12 +482,8 @@ with col_input:
         )
     else:
         edited_dropdown = pd.DataFrame(columns=df_dropdown.columns)
-    if len(st.session_state.df_numeric_state):            
+    if not st.session_state.df_numeric_state.empty:            
         st.markdown("Material Kabel / Konduktor (Tabel Volume PLN )")
-        if st.session_state.reset_trigger:
-            st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
-            st.session_state.df_numeric_state["KEBUTUHAN"] = 0
-            st.session_state.reset_trigger = False
         edited_numeric = st.data_editor(
                 st.session_state.df_numeric_state,
                 use_container_width=True,
