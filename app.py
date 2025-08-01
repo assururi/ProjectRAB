@@ -434,7 +434,8 @@ st.write("🔍 Deteksi Material Kabel (is_length_based):")
 st.write(numeric_items)
 df_dropdown = pd.DataFrame({"NAMA MATERIAL": dropdown_items, "KEBUTUHAN": [0] * len(dropdown_items)})
 df_numeric  = pd.DataFrame({"NAMA MATERIAL": numeric_items,  "KEBUTUHAN": [0] * len(numeric_items)})
-
+st.write("📊 DataFrame df_numeric:")
+st.dataframe(df_numeric)
 # Inisialisasi state untuk menyimpan input
 if "df_dropdown_state" not in st.session_state:
     st.session_state.df_dropdown_state = df_dropdown.copy()
