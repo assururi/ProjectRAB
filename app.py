@@ -551,7 +551,7 @@ edited_df["TOTAL HARGA"] = edited_df["KEBUTUHAN"] * edited_df["HARGA SATUAN"]
 
 df = edited_df.copy()
 total_anggaran = df["TOTAL HARGA"].sum()
-
+st.write("Isi DataFrame yang akan ditulis:", df)
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
