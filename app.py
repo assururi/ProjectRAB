@@ -538,9 +538,13 @@ with col_vis:
             canvas.save(buf, format="PNG")
             st.image(buf.getvalue(), caption=f"Rekonstruksi Gardu {selected_gardu}", width=400)
 
-# =========================
-# HITUNG TOTAL & TAMPILKAN
-# =========================
+import openpyxl
+from io import BytesIO
+
+# Load template Excel dari dictionary atau path lokal
+template_path = "Bagian_Gardu/TemplateRAB_Percobaan1.xlsx"  # sesuaikan lokasi jika dari dictionary
+
+# Hitung ulang total harga
 edited_df["HARGA SATUAN"] = edited_df["NAMA MATERIAL"].map(material_dict)
 edited_df["KEBUTUHAN"] = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0)
 edited_df["TOTAL HARGA"] = edited_df["KEBUTUHAN"] * edited_df["HARGA SATUAN"]
@@ -548,20 +552,39 @@ edited_df["TOTAL HARGA"] = edited_df["KEBUTUHAN"] * edited_df["HARGA SATUAN"]
 df = edited_df.copy()
 total_anggaran = df["TOTAL HARGA"].sum()
 
-col1, col2 = st.columns([2, 1])
-with col1:
-    st.markdown("### Tabel RAB")
-    st.dataframe(df, use_container_width=True)
+# =============== #
+# TAMBAHKAN KE XLSX
+# =============== #
+wb = openpyxl.load_workbook(template_path)
+ws = wb.active
 
-    st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
+# Mulai dari baris ke-10 (setelah header di baris 9)
+start_row = 10
 
-    csv = df.to_csv(index=False).encode('utf-8')
-    st.download_button(
-        label=" Download Laporan RAB",
-        data=csv,
-        file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.csv",
-        mime='text/csv'
-    )
+for i, row in df.iterrows():
+    ws[f'D{start_row}'] = row["NAMA MATERIAL"]
+    ws[f'H{start_row}'] = row["KEBUTUHAN"]
+    ws[f'J{start_row}'] = row["HARGA SATUAN"]
+    ws[f'K{start_row}'] = row["TOTAL HARGA"]
+    start_row += 1
+
+# Simpan ke dalam memori (stream) untuk diunduh
+output = BytesIO()
+wb.save(output)
+output.seek(0)
+
+# Streamlit download button
+st.download_button(
+    label="⬇️ Download Laporan RAB (Excel)",
+    data=output,
+    file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
+
+# Tampilan DataFrame dan total anggaran
+st.markdown("### Tabel RAB")
+st.dataframe(df, use_container_width=True)
+st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
 
 with col2:
     st.markdown("### Visualisasi Gardu Lengkap")
