@@ -560,7 +560,7 @@ ws = wb.active
 
 # Mulai dari baris ke-10 (setelah header di baris 9)
 start_row = 10
-
+st.markdown(df.columns)
 for i, row in df.iterrows():
     ws[f'D{start_row}'] = row["NAMA MATERIAL"]
     ws[f'H{start_row}'] = row["KEBUTUHAN"]
