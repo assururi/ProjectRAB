@@ -430,12 +430,12 @@ df_input = pd.DataFrame({
 # Bagi material berdasarkan jenis input
 dropdown_items = [m for m in df_input["NAMA MATERIAL"] if not is_length_based(m)]
 numeric_items  = [m for m in df_input["NAMA MATERIAL"] if is_length_based(m)]
-st.write("🔍 Deteksi Material Kabel (is_length_based):")
-st.write(numeric_items)
+
+
 df_dropdown = pd.DataFrame({"NAMA MATERIAL": dropdown_items, "KEBUTUHAN": [0] * len(dropdown_items)})
 df_numeric  = pd.DataFrame({"NAMA MATERIAL": numeric_items,  "KEBUTUHAN": [0] * len(numeric_items)})
-st.write("📊 DataFrame df_numeric:")
-st.dataframe(df_numeric)
+
+
 # Inisialisasi state untuk menyimpan input
 if "df_dropdown_state" not in st.session_state:
     st.session_state.df_dropdown_state = df_dropdown.copy()
@@ -470,7 +470,6 @@ with col_input:
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
             df_dropdown,
-            
             use_container_width=True,
             column_config={
                 "KEBUTUHAN": st.column_config.SelectboxColumn(
@@ -482,10 +481,10 @@ with col_input:
         )
     else:
         edited_dropdown = pd.DataFrame(columns=df_dropdown.columns)
-    if not st.session_state.df_numeric_state.empty:            
+    if len(df_numeric):            
         st.markdown("Material Kabel / Konduktor (Tabel Volume PLN )")
         edited_numeric = st.data_editor(
-                st.session_state.df_numeric_state,
+                df_numeric,
                 use_container_width=True,
                 column_config={
                     "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
