@@ -176,7 +176,7 @@ gambat_material_per_gardu = {
         "Penomoran Tiang TM": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Penomoran Tiang TM GC.png",
         "Pasang rangka gardu Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Rangka gardu cantol GC.png",
         "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-hardware, isolator, pipa, PGTM_TR Cantol GC.png",
-        "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-trafo 200 - 250 kVA GC (1).png",
+        "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-trafo 200 - 250 kVA GC(1).png",
         "Pasang Arrester + Jumper": [
             "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 1 GC.png",
             "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 2 GC.png",
