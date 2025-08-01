@@ -557,25 +557,26 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # =============== #
 wb = openpyxl.load_workbook(template_path)
 ws = wb.active
-
-start_row = 9  # sesuaikan dengan baris awal pada template Excel
-
 for index, row in df.iterrows():
     # Kolom D - NAMA MATERIAL
-    if "NAMA MATERIAL" in row and pd.notnull(row["NAMA MATERIAL"]):
-        ws[f'D{start_row}'] = str(row["NAMA MATERIAL"])
+    nama_material = row.get("NAMA MATERIAL")
+    if pd.notna(nama_material):
+        ws[f'D{start_row}'] = str(nama_material)
 
     # Kolom G - KEBUTUHAN
-    if "KEBUTUHAN" in row and pd.notnull(row["KEBUTUHAN"]):
-        ws[f'G{start_row}'] = float(row["KEBUTUHAN"])
+    kebutuhan = pd.to_numeric(row.get("KEBUTUHAN", 0), errors="coerce")
+    if not pd.isna(kebutuhan):
+        ws[f'G{start_row}'] = kebutuhan
 
     # Kolom I - HARGA SATUAN
-    if "HARGA SATUAN" in row and pd.notnull(row["HARGA SATUAN"]):
-        ws[f'I{start_row}'] = float(row["HARGA SATUAN"])
+    harga_satuan = pd.to_numeric(row.get("HARGA SATUAN", 0), errors="coerce")
+    if not pd.isna(harga_satuan):
+        ws[f'I{start_row}'] = harga_satuan
 
     # Kolom K - TOTAL HARGA
-    if "TOTAL HARGA" in row and pd.notnull(row["TOTAL HARGA"]):
-        ws[f'K{start_row}'] = float(row["TOTAL HARGA"])
+    total_harga = pd.to_numeric(row.get("TOTAL HARGA", 0), errors="coerce")
+    if not pd.isna(total_harga):
+        ws[f'K{start_row}'] = total_harga
 
     start_row += 1
 
