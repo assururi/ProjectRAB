@@ -555,7 +555,7 @@ st.write("Isi DataFrame yang akan ditulis:", df)
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
-template_path = "TemplateRAB_Percobaan1.xlsx"
+template_path = "Bagian_Gardu/TemplateRAB_Percobaan1.xlsx"
 output = BytesIO()
 
 # Load template
