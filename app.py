@@ -25,7 +25,7 @@ VALID_USERS = {
 def login():
     # Tambahkan CSS background + overlay
     st.markdown(
-        f"""
+        """
         <style>
         body {
             background-image: url("Bagian_Gardu/Penyulang.jpeg");
