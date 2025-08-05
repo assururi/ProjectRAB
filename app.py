@@ -28,35 +28,34 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(data).decode()
     
 bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
-
+st.markdown(
+    """
+    <style>
+    body {
+        background-image: url("data:image/jpeg;base64,{bin_str}");
+        background-size: cover;
+        background-position: center;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 70, 140, 0.5); /* Biru transparan */
+        z-index: 0;
+    }
+    .main > div {
+        position: relative;
+        z-index: 1;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 def login():
     # Tambahkan CSS background + overlay
-    st.markdown(
-        """
-        <style>
-        body {
-            background-image: url("data:image/jpeg;base64,{bin_str}");
-            background-size: cover;
-            background-position: center;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 70, 140, 0.5); /* Biru transparan */
-            z-index: 0;
-        }
-        .main > div {
-            position: relative;
-            z-index: 1;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
     st.title("Login Dashboard")
     with st.form("login_form"):
         username = st.text_input("Username").strip()
