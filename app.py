@@ -29,7 +29,7 @@ def get_base64_of_bin_file(bin_file):
     
 bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
 st.markdown(
-    """
+    f"""
     <style>
     body {
         background-image: url("data:image/jpeg;base64,{bin_str}");
