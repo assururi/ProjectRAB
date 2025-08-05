@@ -4,6 +4,7 @@ from PIL import Image
 import io
 import streamlit as st
 import pandas as pd
+import base64
 
 # =========================
 # KONFIGURASI DASAR
@@ -21,6 +22,12 @@ VALID_USERS = {
     "admin": "admin123",
     "plnuser": "pln2024"
 }
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+    
+bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
 
 def login():
     # Tambahkan CSS background + overlay
@@ -28,7 +35,7 @@ def login():
         """
         <style>
         body {
-            background-image: url("Bagian_Gardu/Penyulang.jpeg");
+            background-image: url("data:image/jpeg;base64,{bin_str}");
             background-size: cover;
             background-position: center;
         }
