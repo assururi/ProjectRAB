@@ -57,6 +57,17 @@ st.markdown(
 )
 def login():
     # Tambahkan CSS background + overlay
+    st.markdown(
+        """
+        <style>
+        .stApp h1 {
+            color: #ffffff; /* Putih */
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     st.title("Login Dashboard")
     with st.form("login_form"):
         username = st.text_input("Username").strip()
