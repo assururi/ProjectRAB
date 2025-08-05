@@ -32,7 +32,7 @@ st.markdown(
     f"""
     <style>
     body {
-        background-image: url("data:image/jpeg;base64,{bin_str}");
+        background-image: url("data:Bagian_Gardu/Penyulang.jpeg,{bin_str}");
         background-size: cover;
         background-position: center;
     }
