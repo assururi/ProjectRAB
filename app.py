@@ -575,7 +575,7 @@ else:
 # =========================
 col_input, col_vis = st.columns([1.2, 1])
 with col_input:
-    st.markdown("### Input Kebutuhan Material")
+    st.markdown(f"### Input Kebutuhan Material - {selected_gardu}")
     if st.session_state.reset_trigger:
             st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
             st.session_state.df_numeric_state["KEBUTUHAN"] = 0
