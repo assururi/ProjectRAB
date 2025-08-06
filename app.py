@@ -29,32 +29,7 @@ def get_base64_of_bin_file(bin_file):
     
 bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
 # Tulis CSS di dalam string triple quotes, f-string
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpeg;base64,{bin_str}");
-        background-size: cover;
-        background-position: center;
-    }}
-    .stApp::before {{
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 70, 140, 0.5);
-        z-index: 0;
-    }}
-    .main > div {{
-        position: relative;
-        z-index: 1;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 def login():
     # Tambahkan CSS background + overlay
     st.markdown(
@@ -85,7 +60,32 @@ def login():
 if not st.session_state.logged_in:
     login()
     st.stop()
-
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpeg;base64,{bin_str}");
+            background-size: cover;
+            background-position: center;
+        }}
+        .stApp::before {{
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 70, 140, 0.5);
+            z-index: 0;
+        }}
+        .main > div {{
+            position: relative;
+            z-index: 1;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 with st.sidebar:
     st.image("Bagian_Gardu/Logo_PLN.png", width=120)
     if st.button("Logout"):
