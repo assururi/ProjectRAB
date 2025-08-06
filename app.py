@@ -95,6 +95,17 @@ with st.sidebar:
 # =========================
 # DATA HARGA & GAMBAR
 # =========================
+st.markdown(
+    """
+    <style>
+    .stApp h1 {
+        color: #ffffff; /* Putih */
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("Dashboard Perencanaan RAB Beserta Visualisasi")
 
 gardu_data = {
