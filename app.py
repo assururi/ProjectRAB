@@ -702,6 +702,4 @@ st.markdown("### Tabel RAB")
 st.dataframe(df, use_container_width=True)
 st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
 
-with col2:
-    st.markdown("### Visualisasi Gardu Lengkap")
-    st.image(image_file, caption=f"Diagram {selected_gardu}", width=350)
+
