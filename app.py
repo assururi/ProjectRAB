@@ -574,7 +574,7 @@ else:
 # =========================
 col_input, col_vis = st.columns([1.2, 1])
 with col_input:
-    st.markdown("### Input Kebutuhan Material")
+    st.markdown(f"### Input Kebutuhan Material - {selected_gardu}")
     if st.session_state.reset_trigger:
             st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
             st.session_state.df_numeric_state["KEBUTUHAN"] = 0
@@ -664,7 +664,6 @@ edited_df["TOTAL HARGA"] = edited_df["KEBUTUHAN"] * edited_df["HARGA SATUAN"]
 
 df = edited_df.copy()
 total_anggaran = df["TOTAL HARGA"].sum()
-st.write("Isi DataFrame yang akan ditulis:", df)
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
@@ -684,6 +683,11 @@ for i, (_, row) in enumerate(df.iterrows()):
     ws[f'G{row_num}'] = float(row["KEBUTUHAN"])
     ws[f'I{row_num}'] = float(row["HARGA SATUAN"])
     ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
+    
+# Tampilan DataFrame dan total anggaran
+st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
+st.markdown("### Tabel RAB")
+st.dataframe(df, use_container_width=True)
 
 # Simpan ke BytesIO
 wb.save(output)
@@ -696,11 +700,3 @@ st.download_button(
     file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
-# Tampilan DataFrame dan total anggaran
-st.markdown("### Tabel RAB")
-st.dataframe(df, use_container_width=True)
-st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
-
-with col2:
-    st.markdown("### Visualisasi Gardu Lengkap")
-    st.image(image_file, caption=f"Diagram {selected_gardu}", width=350)
