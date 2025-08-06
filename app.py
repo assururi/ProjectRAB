@@ -9,7 +9,11 @@ import base64
 # =========================
 # KONFIGURASI DASAR
 # =========================
-st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="Bagian_Gardu/Logo_PLN.png")
+st.set_page_config(
+    layout="wide",
+    page_title="Dashboard RAB Gardu",
+    page_icon="Bagian_Gardu/Logo_PLN.png"
+)
 
 # =========================
 # ========== LOGIN =========
@@ -17,83 +21,45 @@ st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="B
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
-st.markdown(
-    """
-    <style>
-    .stForm > div {
-        border: 2px solid #00468C !important; /* Biru PLN */
-        border-radius: 8px;
-        background-color: #FFD700; /* Contoh: kuning solid */
-        padding: 20px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Styling form login dan background
+st.markdown("""
+<style>
+.stForm > div {
+    border: 2px solid #00468C;
+    border-radius: 8px;
+    background-color: #FFD700;
+    padding: 20px;
+}
+.stApp h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+input[type="text"], input[type="password"] {
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 2px solid #FFCC00;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,204,0,0.8);
+}
+</style>
+""", unsafe_allow_html=True)
 
-# Data akun (bisa kamu ganti nanti)
 VALID_USERS = {
     "admin": "admin123",
     "plnuser": "pln2024"
 }
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-    
-bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
-# Tulis CSS di dalam string triple quotes, f-string
+
+def get_base64_image(image_path):
+    with open(image_path, 'rb') as f:
+        return base64.b64encode(f.read()).decode()
+
+bin_str = get_base64_image("Bagian_Gardu/Penyulang.jpeg")
 
 def login():
-    # Tambahkan CSS background + overlay
-
-    st.markdown(
-        """
-        <style>
-        .stApp h1 {
-            color: #ffffff; /* Putih */
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """
-        <style>
-        /* Ubah warna kotak form */
-        .stForm > div {
-            background-color: #FFFFFF !important; /* Kuning PLN */
-            border: 2px solid #FFD700; /* Kalau mau border kuning juga */
-            border-radius: 8px;
-            padding: 20px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
     st.title("Login Dashboard")
-    
     with st.form("login_form"):
-        st.markdown(
-            """
-            <style>
-            /* Border input text */
-            input[type="text"], input[type="password"] {
-                border: 2px solid #000000 !important;  /* Hitam PLN */
-                border-radius: 5px;
-            }
-        
-            /* Border input text saat fokus */
-            input[type="text"]:focus, input[type="password"]:focus {
-                border: 2px solid #FFCC00 !important; /* Warna kuning lebih terang saat fokus */
-                outline: none;
-                box-shadow: 0 0 5px rgba(255,204,0,0.8);
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
         username = st.text_input("Username").strip()
         password = st.text_input("Password", type="password").strip()
         submitted = st.form_submit_button("Login")
@@ -108,40 +74,53 @@ def login():
 
 if not st.session_state.logged_in:
     login()
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpeg;base64,{bin_str}");
-            background-size: cover;
-            background-position: center;
-        }}
-        .stApp::before {{
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 70, 140, 0.5);
-            z-index: 0;
-        }}
-        .main > div {{
-            position: relative;
-            z-index: 1;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
+    st.markdown(f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpeg;base64,{bin_str}");
+        background-size: cover;
+        background-position: center;
+    }}
+    .stApp::before {{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 70, 140, 0.5);
+        z-index: 0;
+    }}
+    .main > div {{
+        position: relative;
+        z-index: 1;
+    }}
+    </style>
+    """, unsafe_allow_html=True)
     st.stop()
-    
+
+# =========================
+# SIDEBAR
+# =========================
 with st.sidebar:
     st.image("Bagian_Gardu/Logo_PLN.png", width=120)
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
+
+# =========================
+# HEADER UTAMA
+# =========================
+st.markdown("""
+<style>
+.stApp h1 {
+    color: #04bbdf;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.title("Dashboard Perencanaan RAB Beserta Visualisasi")
 
 # =========================
 # DATA HARGA & GAMBAR
