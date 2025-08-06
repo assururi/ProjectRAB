@@ -35,6 +35,26 @@ def login():
     st.markdown(
         """
         <style>
+        /* Border input text */
+        input[type="text"], input[type="password"] {
+            border: 2px solid #FFD700 !important;  /* Kuning PLN */
+            border-radius: 5px;
+        }
+    
+        /* Border input text saat fokus */
+        input[type="text"]:focus, input[type="password"]:focus {
+            border: 2px solid #FFCC00 !important; /* Warna kuning lebih terang saat fokus */
+            outline: none;
+            box-shadow: 0 0 5px rgba(255,204,0,0.8);
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        """
+        <style>
         .stApp h1 {
             color: #ffffff; /* Putih */
             text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
@@ -85,6 +105,7 @@ if not st.session_state.logged_in:
         """,
         unsafe_allow_html=True
     )
+    
     st.stop()
     
 with st.sidebar:
