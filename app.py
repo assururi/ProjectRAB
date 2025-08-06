@@ -37,7 +37,7 @@ def login():
         <style>
         /* Border input text */
         input[type="text"], input[type="password"] {
-            border: 2px solid #FFD700 !important;  /* Kuning PLN */
+            border: 2px solid #000000 !important;  /* Hitam PLN */
             border-radius: 5px;
         }
     
