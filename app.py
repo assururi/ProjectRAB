@@ -49,7 +49,7 @@ def login():
         <style>
         /* Ubah warna kotak form */
         .stForm > div {
-            background-color: #FFD700 !important; /* Kuning PLN */
+            background-color: #FFFFFF !important; /* Kuning PLN */
             border: 2px solid #FFD700; /* Kalau mau border kuning juga */
             border-radius: 8px;
             padding: 20px;
