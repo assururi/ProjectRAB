@@ -499,8 +499,7 @@ urutan_layer_per_gardu = {
 # =========================
 
 if "reset_trigger" not in st.session_state:
-    st.session_state.re
-    set_trigger = False
+    st.session_state.reset_trigger = False
 
 def reset_all():
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
