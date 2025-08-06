@@ -684,10 +684,11 @@ for i, (_, row) in enumerate(df.iterrows()):
     ws[f'G{row_num}'] = float(row["KEBUTUHAN"])
     ws[f'I{row_num}'] = float(row["HARGA SATUAN"])
     ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
+    
 # Tampilan DataFrame dan total anggaran
 st.markdown("### Tabel RAB")
-st.dataframe(df, use_container_width=True)
 st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
+st.dataframe(df, use_container_width=True)
 
 # Simpan ke BytesIO
 wb.save(output)
