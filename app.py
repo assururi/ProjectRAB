@@ -149,18 +149,8 @@ with st.sidebar:
 st.markdown(
     """
     <style>
-    .block-container {
-        padding-top: 1rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    """
-    <style>
     .stApp h1 {
-        color: #00000; 
+        color: #04bbdf; 
         text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
     }
     </style>
