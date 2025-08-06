@@ -499,15 +499,16 @@ urutan_layer_per_gardu = {
 # =========================
 
 if "reset_trigger" not in st.session_state:
-    st.session_state.re
-    set_trigger = False
+    st.session_state.reset_trigger = False
 
 def reset_all():
+    # Atur semua kebutuhan kembali ke 0
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
+
 if st.button("Reset Kebutuhan"):
-        st.session_state.reset_trigger = True
-        st.rerun()
+    st.session_state.reset_trigger = True
+    st.rerun()
 
 # =========================
 # PILIH GARDU
@@ -539,7 +540,6 @@ df_input = pd.DataFrame({
 dropdown_items = [m for m in df_input["NAMA MATERIAL"] if not is_length_based(m)]
 numeric_items  = [m for m in df_input["NAMA MATERIAL"] if is_length_based(m)]
 
-
 df_dropdown = pd.DataFrame({
     "NAMA MATERIAL": dropdown_items, 
     "KEBUTUHAN": [0] * len(dropdown_items)
@@ -548,7 +548,6 @@ df_numeric  = pd.DataFrame({
     "NAMA MATERIAL": numeric_items,  
     "KEBUTUHAN": [0] * len(numeric_items)
 })
-
 
 # Inisialisasi state untuk menyimpan input
 if "df_dropdown_state" not in st.session_state:
@@ -568,26 +567,26 @@ elif selected_gardu == "Gardu Cantol":
 else:
     pilihan_jumlah = [0, 1]  # default untuk tipe lain
 
-
-
 # =========================
 # INPUT USER
 # =========================
 col_input, col_vis = st.columns([1.2, 1])
 with col_input:
     st.markdown("### Input Kebutuhan Material")
+
+    # Jika tombol reset ditekan
     if st.session_state.reset_trigger:
-            st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
-            st.session_state.df_numeric_state["KEBUTUHAN"] = 0
-            st.session_state.reset_trigger = False
+        reset_all()
+        st.session_state.reset_trigger = False
+
     if len(df_dropdown):
         st.markdown("**Jenis Pekerjaan / Material (Tabel Volume Pemborong)**")
         edited_dropdown = st.data_editor(
-            df_dropdown,
+            st.session_state.df_dropdown_state,
             use_container_width=True,
             column_config={
                 "KEBUTUHAN": st.column_config.SelectboxColumn(
-                "KEBUTUHAN", options=pilihan_jumlah, default=0
+                    "KEBUTUHAN", options=pilihan_jumlah, default=0
                 ),
                 "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
             },
@@ -595,15 +594,16 @@ with col_input:
         )
     else:
         edited_dropdown = pd.DataFrame(columns=df_dropdown.columns)
+
     if len(df_numeric):            
-        st.markdown("Material Kabel / Konduktor (Tabel Volume PLN )")
+        st.markdown("**Material Kabel / Konduktor (Tabel Volume PLN)**")
         edited_numeric = st.data_editor(
-                df_numeric,
-                use_container_width=True,
-                column_config={
-                    "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
-                    "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
-                },
+            st.session_state.df_numeric_state,
+            use_container_width=True,
+            column_config={
+                "KEBUTUHAN": st.column_config.NumberColumn("KEBUTUHAN", min_value=0, step=1),
+                "NAMA MATERIAL": st.column_config.TextColumn("NAMA MATERIAL", disabled=True)
+            },
             hide_index=True
         )
     else:
