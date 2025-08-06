@@ -59,7 +59,6 @@ def login():
 
 if not st.session_state.logged_in:
     login()
-    st.stop()
     st.markdown(
         f"""
         <style>
@@ -86,6 +85,8 @@ if not st.session_state.logged_in:
         """,
         unsafe_allow_html=True
     )
+    st.stop()
+    
 with st.sidebar:
     st.image("Bagian_Gardu/Logo_PLN.png", width=120)
     if st.button("Logout"):
@@ -99,7 +100,7 @@ st.markdown(
     """
     <style>
     .stApp h1 {
-        color: #ffffff; /* Putih */
+        color: #04bbdf; 
         text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
     }
     </style>
