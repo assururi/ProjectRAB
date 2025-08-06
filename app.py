@@ -160,7 +160,7 @@ st.markdown(
     """
     <style>
     .stApp h1 {
-        color: #04bbdf; 
+        color: #00000; 
         text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
     }
     </style>
