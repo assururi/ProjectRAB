@@ -45,26 +45,27 @@ def login():
         unsafe_allow_html=True
     )
     st.title("Login Dashboard")
-    st.markdown(
-        """
-        <style>
-        /* Border input text */
-        input[type="text"], input[type="password"] {
-            border: 2px solid #000000 !important;  /* Hitam PLN */
-            border-radius: 5px;
-        }
     
-        /* Border input text saat fokus */
-        input[type="text"]:focus, input[type="password"]:focus {
-            border: 2px solid #FFCC00 !important; /* Warna kuning lebih terang saat fokus */
-            outline: none;
-            box-shadow: 0 0 5px rgba(255,204,0,0.8);
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
     with st.form("login_form"):
+        st.markdown(
+            """
+            <style>
+            /* Border input text */
+            input[type="text"], input[type="password"] {
+                border: 2px solid #000000 !important;  /* Hitam PLN */
+                border-radius: 5px;
+            }
+        
+            /* Border input text saat fokus */
+            input[type="text"]:focus, input[type="password"]:focus {
+                border: 2px solid #FFCC00 !important; /* Warna kuning lebih terang saat fokus */
+                outline: none;
+                box-shadow: 0 0 5px rgba(255,204,0,0.8);
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
         username = st.text_input("Username").strip()
         password = st.text_input("Password", type="password").strip()
         submitted = st.form_submit_button("Login")
