@@ -44,6 +44,20 @@ def login():
         """,
         unsafe_allow_html=True
     )
+    st.markdown(
+        """
+        <style>
+        /* Ubah warna kotak form */
+        .stForm > div {
+            background-color: #FFD700 !important; /* Kuning PLN */
+            border: 2px solid #FFD700; /* Kalau mau border kuning juga */
+            border-radius: 8px;
+            padding: 20px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     st.title("Login Dashboard")
     
     with st.form("login_form"):
@@ -130,7 +144,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.title("Dashboard Perencanaan RAB Beserta Visualisasi")
-
 gardu_data = {
     "Gardu Tembok": {
         "material": {
