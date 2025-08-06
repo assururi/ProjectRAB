@@ -545,7 +545,7 @@ df_dropdown = pd.DataFrame({
     "KEBUTUHAN": [0] * len(dropdown_items)
 })
 df_numeric  = pd.DataFrame({
-    "NAMA MATERIAL": umeric_items,  
+    "NAMA MATERIAL": numeric_items,  
     "KEBUTUHAN": [0] * len(numeric_items)
 })
 
