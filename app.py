@@ -17,6 +17,20 @@ st.set_page_config(layout="wide", page_title="Dashboard RAB Gardu", page_icon="B
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+st.markdown(
+    """
+    <style>
+    .stForm > div {
+        border: 2px solid #00468C !important; /* Biru PLN */
+        border-radius: 8px;
+        background-color: #FFD700; /* Contoh: kuning solid */
+        padding: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Data akun (bisa kamu ganti nanti)
 VALID_USERS = {
     "admin": "admin123",
