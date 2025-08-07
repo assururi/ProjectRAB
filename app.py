@@ -78,7 +78,7 @@ def login():
     st.markdown(
         """
         <h1 style="text-align: center; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">
-            Login Dashboard
+            Login Sistem RAB & Visualisasi Gardu
         </h1>
         """,
         unsafe_allow_html=True
@@ -154,6 +154,25 @@ with st.sidebar:
     if st.button("Logout"):
         st.session_state.logged_in = False
         st.rerun()
+        # Logo BUMN di pojok kiri bawah
+    st.markdown(
+        """
+        <style>
+        .bumn-logo-container {
+            position: absolute;
+            bottom: 10px;   /* Jarak dari bawah sidebar */
+            left: 10px;     /* Jarak dari kiri sidebar */
+        }
+        .bumn-logo-container img {
+            width: 60px;    /* Ukuran logo BUMN */
+        }
+        </style>
+        <div class="bumn-logo-container">
+            <img src="Bagian_Gardu/BUMN.png">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # =========================
 # DATA HARGA & GAMBAR
@@ -169,7 +188,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.title("Dashboard Perencanaan RAB Beserta Visualisasi")
+st.title("erta Visualisasi")
 gardu_data = {
     "Gardu Tembok": {
         "material": {
