@@ -45,55 +45,46 @@ bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
 # Tulis CSS di dalam string triple quotes, f-string
 
 def login():
-    # Tambahkan CSS background + overlay
+    # Styling form minimalis
+    st.markdown("""
+        <style>
+        .login-container {
+            max-width: 360px;
+            margin: 8vh auto;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .login-title {
+            text-align: center;
+            font-size: 1.7em;
+            font-weight: 700;
+            color: #00468C;
+            margin-bottom: 1.2em;
+        }
+        input[type="text"], input[type="password"] {
+            border: 1.5px solid #999 !important;
+            border-radius: 6px;
+            padding: 8px !important;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border: 1.5px solid #FFD700 !important;
+            box-shadow: 0 0 6px rgba(255,204,0,0.5);
+        }
+        button[kind="primary"] {
+            background-color: #00468C !important;
+            color: white !important;
+            border-radius: 6px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
-    st.markdown(
-        """
-        <style>
-        .stApp h1 {
-            color: #ffffff; /* Putih */
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Tambahkan bayangan supaya lebih terbaca */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """
-        <style>
-        /* Ubah warna kotak form */
-        .stForm > div {
-            background-color: #FFFFFF !important; /* Kuning PLN */
-            border: 2px solid #FFD700; /* Kalau mau border kuning juga */
-            border-radius: 8px;
-            padding: 20px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    st.title("Login Dashboard")
-    
+    st.markdown('<div class="login-container">', unsafe_allow_html=True)
+    st.markdown('<div class="login-title">Login Dashboard</div>', unsafe_allow_html=True)
+
+    # Tetap menggunakan form asli
     with st.form("login_form"):
-        st.markdown(
-            """
-            <style>
-            /* Border input text */
-            input[type="text"], input[type="password"] {
-                border: 2px solid #000000 !important;  /* Hitam PLN */
-                border-radius: 5px;
-            }
-        
-            /* Border input text saat fokus */
-            input[type="text"]:focus, input[type="password"]:focus {
-                border: 2px solid #FFCC00 !important; /* Warna kuning lebih terang saat fokus */
-                outline: none;
-                box-shadow: 0 0 5px rgba(255,204,0,0.8);
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
         username = st.text_input("Username").strip()
         password = st.text_input("Password", type="password").strip()
         submitted = st.form_submit_button("Login")
@@ -105,6 +96,9 @@ def login():
                 st.rerun()
             else:
                 st.error("Username atau password salah")
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 if not st.session_state.logged_in:
     login()
