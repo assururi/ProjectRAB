@@ -50,7 +50,7 @@ def login():
         /* Container utama login */
         .login-container {
             width: 100%;
-            max-width: 360px; /* <== Lebar maksimal form login */
+            max-width: 200px; /* <== Lebar maksimal form login */
             margin: 8vh auto;
             padding: 20px 25px;
             background: rgba(255, 255, 255, 0.95);
