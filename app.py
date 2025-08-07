@@ -45,17 +45,19 @@ bin_str = get_base64_of_bin_file("Bagian_Gardu/Penyulang.jpeg")
 # Tulis CSS di dalam string triple quotes, f-string
 
 def login():
-    # Styling form minimalis
     st.markdown("""
         <style>
+        /* Container utama login */
         .login-container {
-            max-width: 360px;
+            width: 100%;
+            max-width: 360px; /* <== Lebar maksimal form login */
             margin: 8vh auto;
             padding: 20px 25px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
+
         .login-title {
             text-align: center;
             font-size: 1.7em;
@@ -63,19 +65,29 @@ def login():
             color: #00468C;
             margin-bottom: 1.2em;
         }
+
+        /* Atur input biar mengikuti ukuran container */
         input[type="text"], input[type="password"] {
+            width: 100% !important;
             border: 1.5px solid #999 !important;
             border-radius: 6px;
             padding: 8px !important;
+            font-size: 0.9em;
         }
+
         input[type="text"]:focus, input[type="password"]:focus {
             border: 1.5px solid #FFD700 !important;
             box-shadow: 0 0 6px rgba(255,204,0,0.5);
         }
+
+        /* Tombol login */
         button[kind="primary"] {
             background-color: #00468C !important;
             color: white !important;
             border-radius: 6px;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+            margin-top: 10px;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -83,7 +95,6 @@ def login():
     st.markdown('<div class="login-container">', unsafe_allow_html=True)
     st.markdown('<div class="login-title">Login Dashboard</div>', unsafe_allow_html=True)
 
-    # Tetap menggunakan form asli
     with st.form("login_form"):
         username = st.text_input("Username").strip()
         password = st.text_input("Password", type="password").strip()
