@@ -277,7 +277,7 @@ gardu_data = {
 
             # Perlengkapan gardu
             "TRF DIS;24kV;400/230;25kVA;DYNS;00": 82638,
-            "LVSDB;DIST;3P;400V;630A;4Line;OD": 28466360,
+            "LVSB;DIST;3P;400V;630A;4Line;OD": 28466360,
 
             # Perlengkapan jaringan
             "Line Post;24kV;12.5kN;Polymer SIR": 219040,
@@ -463,7 +463,7 @@ pilihan_jumlah_per_material = {
 
             # Perlengkapan gardu
             "TRF DIS;24kV;400/230;25kVA;DYNS;00": [0,1],
-            "LVSDB;DIST;3P;400V;630A;4Line;OD": [0,1],
+            "LVSB;DIST;3P;400V;630A;4Line;OD": [0,1],
 
             # Perlengkapan jaringan
             "Line Post;24kV;12.5kN;Polymer SIR": [0,1,2,3,4,5,6],
@@ -698,7 +698,7 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
-template_path = "Bagian_Gardu/TemplateRAB_Percobaan1.xlsx"
+template_path = "Bagian_Gardu/RevisiTemplateRAB.xlsx"
 output = BytesIO()
 
 # Load template
@@ -706,7 +706,7 @@ wb = load_workbook(template_path)
 ws = wb.active
 
 # Mulai menulis dari baris 43
-start_row = 43
+start_row = 11
 
 for i, (_, row) in enumerate(df.iterrows()):
     row_num = start_row + i
