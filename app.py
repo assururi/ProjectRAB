@@ -23,7 +23,7 @@ st.markdown(
     .stForm > div {
         border: 2px solid #00468C !important; /* Biru PLN */
         border-radius: 8px;
-        background-color: #FFD700; /* Contoh: kuning solid */
+        background-color: #00000; /* Contoh: kuning solid */
         padding: 20px;
     }
     </style>
