@@ -155,24 +155,24 @@ with st.sidebar:
         st.session_state.logged_in = False
         st.rerun()
         # Logo BUMN di pojok kiri bawah
-    st.markdown(
-        """
-        <style>
-        .bumn-logo-container {
-            position: absolute;
-            bottom: 10px;   /* Jarak dari bawah sidebar */
-            left: 10px;     /* Jarak dari kiri sidebar */
-        }
-        .bumn-logo-container img {
-            width: 60px;    /* Ukuran logo BUMN */
-        }
-        </style>
-        <div class="bumn-logo-container">
-            <img src="Bagian_Gardu/BUMN.png">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+        st.markdown(
+            """
+            <style>
+            .bumn-logo-container {
+                position: absolute;
+                bottom: 10px;   /* Jarak dari bawah sidebar */
+                left: 10px;     /* Jarak dari kiri sidebar */
+            }
+            .bumn-logo-container img {
+                width: 60px;    /* Ukuran logo BUMN */
+            }
+            </style>
+            <div class="bumn-logo-container">
+                <img src="Bagian_Gardu/BUMN.png">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 # =========================
 # DATA HARGA & GAMBAR
