@@ -716,7 +716,7 @@ for i, (_, row) in enumerate(df.iterrows()):
     ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
     ws[f'I{row_num}'] = float(row["KEBUTUHAN"])
     ws[f'J{row_num}'] = float(row["HARGA SATUAN"])
-    ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
+    ws[f'L{row_num}'] = float(row["TOTAL HARGA"])
 
 # Tambahkan total anggaran ke KL60
 try:
