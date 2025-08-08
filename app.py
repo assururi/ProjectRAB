@@ -535,22 +535,10 @@ if "reset_trigger" not in st.session_state:
 def reset_all():
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
-
-st.markdown("""
-    <style>
-    div.stButton > button[aria-label="Reset Kebutuhan"] {
-        background-color: red !important;
-        color: white !important;
-    }
-    div.stButton > button[aria-label="Reset Kebutuhan"]:hover {
-        background-color: darkred !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
+    
 if st.button("Reset Kebutuhan"):
-    st.session_state.reset_trigger = True
-    st.rerun()
+        st.session_state.reset_trigger = True
+        st.rerun()
     
 # =========================
 # PILIH GARDU
