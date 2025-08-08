@@ -313,8 +313,9 @@ gambat_material_per_gardu = {
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TANDA KILAT KECIL GC.png",
         "Penomoran Tiang TM": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Penomoran Tiang TM GC.png",
         "Pasang rangka gardu Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Rangka gardu cantol GC.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-hardware, isolator, pipa, PGTM_TR Cantol GC.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "Bagian_Gardu/GarduCantolRevisi/Revisi_GARDU CANTOL-hardware, isolator, pipa, PGTM_TR Cantol GC.drawio.png",
         "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-trafo 200 - 250 kVA GC(1).png",
+        "LVSB;DIST;3P;400V;250A;2Line;OH": "Bagian_Gardu/GarduCantolRevisi/LVSB;DIST;3P;400V;250A;2Line;OH.png",
         "Pasang Arrester + Jumper": [
             "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 1 GC.png",
             "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-Arrester + Jumper 2 GC.png",
@@ -498,6 +499,7 @@ urutan_layer_per_gardu = {
         "Pasang TM - 1 B/H ( TIANG TUMPU )",
         "Pasang Pentanahan TM Gardu Cantol",
         "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol",
+        "LVSB;DIST;3P;400V;250A;2Line;OH",
         "Pasang trafo 200 - 250 kVA",
         "Pasang Arrester + Jumper",
         "Pasang Cut Out + Jumper",
