@@ -190,14 +190,6 @@ st.markdown(
 )
 st.title("Dahsboard Sistem RAB Beserta Visualisasi")
 gardu_data = {
-    "Gardu Tembok": {
-        "material": {
-            "Isolator Tumpu 20 kV": 50000,
-            "Lightning Arrester": 75000,
-            "Trafo 100 kVA": 5000000,
-        },
-        "image": "/content/drive/MyDrive/Bagian_Gardu/GarduTembok/StukturGarduTembok.JPG"
-    },
     "Gardu Cantol": {
         "material": {
             "Pasang TM - 1 B/H ( TIANG TUMPU )": 105620,
@@ -238,6 +230,14 @@ gardu_data = {
             "CUT OUT;24kV;100A;Polymer-125kV": 1164370.00
         },
          "image": "Bagian_Gardu/GarduCantolRevisi/StrukturGarduCantol.jpg"
+    },
+    "Gardu Tembok": {
+        "material": {
+            "Isolator Tumpu 20 kV": 50000,
+            "Lightning Arrester": 75000,
+            "Trafo 100 kVA": 5000000,
+        },
+        "image": "/content/drive/MyDrive/Bagian_Gardu/GarduTembok/StukturGarduTembok.JPG"
     },
     "Gardu Portal": {
         "material": {
@@ -380,8 +380,8 @@ gambat_material_per_gardu = {
         "Pasang Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 1 GP.drawio.png",
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 2 GP.drawio.png",
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat 4 GP.drawio.png",
-            "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat GP.drawio.png"
+            "Bagian_Gardu/GarduPortalRevisi/Revisi_Jaringan TR 4 GP.png",
+            "Bagian_Gardu/GarduPortalRevisi/Revisi_Jaringan TR 3 GP.png"
         ],
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 1 GP.drawio.png",
@@ -711,8 +711,8 @@ start_row = 11
 for i, (_, row) in enumerate(df.iterrows()):
     row_num = start_row + i
     ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
-    ws[f'G{row_num}'] = float(row["KEBUTUHAN"])
-    ws[f'I{row_num}'] = float(row["HARGA SATUAN"])
+    ws[f'I{row_num}'] = float(row["KEBUTUHAN"])
+    ws[f'J{row_num}'] = float(row["HARGA SATUAN"])
     ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
     
 # Tampilan DataFrame dan total anggaran
