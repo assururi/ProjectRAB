@@ -701,7 +701,7 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
-template_path = "TemplateFormatRAB.xlsx"
+template_path = "Bagian_Gardu/TemplateFormatRAB.xlsx"
 output = BytesIO()
 
 # Load template
