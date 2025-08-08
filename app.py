@@ -357,7 +357,7 @@ gambat_material_per_gardu = {
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Penomoran Tiang 2 GP.drawio.png"
         ],
         "Pasang rangka gardu Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Rangka Gardu Portal GP.drawio.png",
-        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Hardware, isolator, pipa, PGTM_TR Portal GP.drawio.png",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "Bagian_Gardu/GarduPortalRevisi/Revisi_Pemasangan hardware, isolator, pipa, PGTM_TR Portal.png",
         "Pasang trafo 200 - 250 kVA": "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Trafo 200 - 250 kVA GP.drawio.png",
         "Pasang Arrester + Jumper": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-Arrester + Jumper 1 GP.drawio.png",
@@ -383,6 +383,7 @@ gambat_material_per_gardu = {
             "Bagian_Gardu/GarduPortalRevisi/Revisi_Jaringan TR 4 GP.png",
             "Bagian_Gardu/GarduPortalRevisi/Revisi_Jaringan TR 3 GP.png"
         ],
+        "LVSB;DIST;3P;400V;630A;4Line;OD": "Bagian_Gardu/GarduPortalRevisi/LVSB;DIST;3P;400V;630A;4Line;OD.png",
         "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": [
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 1 GP.drawio.png",
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 2 GP.drawio.png"
