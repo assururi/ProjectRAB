@@ -535,6 +535,20 @@ if "reset_trigger" not in st.session_state:
 def reset_all():
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
+
+# CSS kustom untuk membuat tombol Reset jadi merah
+st.markdown("""
+    <style>
+    div.stButton > button:first-child {
+        background-color: red;
+        color: white;
+    }
+    div.stButton > button:first-child:hover {
+        background-color: darkred;
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
 if st.button("Reset Kebutuhan"):
         st.session_state.reset_trigger = True
         st.rerun()
