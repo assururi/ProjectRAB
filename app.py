@@ -536,29 +536,39 @@ def reset_all():
     st.session_state.df_dropdown_state["KEBUTUHAN"] = 0
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
 
-# CSS kustom untuk membuat tombol Reset jadi merah
-# Bungkus tombol dalam div dengan class khusus
+# CSS global untuk membuat tombol reset merah (hanya target ID tertentu)
 st.markdown("""
     <style>
-    .reset-btn > button {
-        background-color: red !important;
-        color: white !important;
+    #reset-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 0.5em;
+        cursor: pointer;
+        font-size: 16px;
     }
-    .reset-btn > button:hover {
-        background-color: darkred !important;
-        color: white !important;
+    #reset-btn:hover {
+        background-color: darkred;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Hanya tombol reset yang dibungkus di sini
-with st.container():
-    st.markdown('<div class="reset-btn">', unsafe_allow_html=True)
-    if st.button("Reset Kebutuhan", key="reset_btn"):
-        st.session_state.reset_trigger = True
-        st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
+# Gunakan form supaya tombol bisa dideteksi
+reset_clicked = st.markdown(
+    """
+    <form action="#" method="post">
+        <button id="reset-btn" type="submit" name="reset">Reset Kebutuhan</button>
+    </form>
+    """,
+    unsafe_allow_html=True
+)
 
+# Deteksi klik
+if st.session_state.get("reset_triggered", False):
+    st.session_state.reset_trigger = True
+    st.rerun()
+    
 # =========================
 # PILIH GARDU
 # =========================
