@@ -537,21 +537,27 @@ def reset_all():
     st.session_state.df_numeric_state["KEBUTUHAN"] = 0
 
 # CSS kustom untuk membuat tombol Reset jadi merah
+# Bungkus tombol dalam div dengan class khusus
 st.markdown("""
     <style>
-    div.stButton > button:first-child {
-        background-color: red;
-        color: white;
+    .reset-btn > button {
+        background-color: red !important;
+        color: white !important;
     }
-    div.stButton > button:first-child:hover {
-        background-color: darkred;
-        color: white;
+    .reset-btn > button:hover {
+        background-color: darkred !important;
+        color: white !important;
     }
     </style>
 """, unsafe_allow_html=True)
-if st.button("Reset Kebutuhan"):
+
+# Hanya tombol reset yang dibungkus di sini
+with st.container():
+    st.markdown('<div class="reset-btn">', unsafe_allow_html=True)
+    if st.button("Reset Kebutuhan", key="reset_btn"):
         st.session_state.reset_trigger = True
         st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # =========================
 # PILIH GARDU
