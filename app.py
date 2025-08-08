@@ -498,6 +498,7 @@ urutan_layer_per_gardu = {
         "Pasang TM - 1 B/H ( TIANG TUMPU )",
         "Pasang Pentanahan TM Gardu Cantol",
         "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol",
+        "LVSB;DIST;3P;400V;630A;4Line;OD",
         "Pasang trafo 200 - 250 kVA",
         "Pasang Arrester + Jumper",
         "Pasang Cut Out + Jumper",
