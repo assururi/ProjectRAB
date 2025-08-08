@@ -718,7 +718,6 @@ for i, (_, row) in enumerate(df.iterrows()):
     ws[f'J{row_num}'] = float(row["HARGA SATUAN"])
     ws[f'K{row_num}'] = float(row["TOTAL HARGA"])
 
-ws["K50"] = total_anggaran
 # Tampilan DataFrame dan total anggaran
 st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
 st.markdown("### Tabel RAB")
