@@ -752,7 +752,7 @@ for _, row in df.iterrows():
     ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
     ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
     ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
-    current_row += 
+    current_row += 1
 # Tambahkan total anggaran ke KL60
 try:
     ws["K60"] = total_anggaran
