@@ -713,7 +713,7 @@ ws = wb.active
 
 kategori_map = {
     "JASA SUTM": ["Pasang TM - 1 B/H ( TIANG TUMPU )"],
-    "JASA GARDU DISTRIBUSI": ["Pasang rangka gardu Portal"],
+    "JASA GARDU DISTRIBUSI": ["Pasang rangka gardu"],
     "LAIN - LAIN": ["Tagging GPS"],
     "TIANG BETON": ["TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir"],
     "MATERIAL KABEL": ["CONDUCTOR;AAAC-S;150mm2;"],
@@ -722,7 +722,6 @@ kategori_map = {
     "MATERIAL PELINDUNG/PENGONTROL": ["LA;20-24kV;K;10kA;POLYMER;;"]
 }
 
-# Mulai menulis dari baris 43
 start_row = 11
 current_row = start_row
 current_category = None
@@ -731,13 +730,15 @@ def safe_float(value):
     try:
         return float(value)
     except (ValueError, TypeError):
-        return 0  # atau None jika mau kosong di Excel
+        return 0
 
 for _, row in df.iterrows():
-    # Cek apakah material ini masuk kategori tertentu
+    nama_material = str(row["NAMA MATERIAL"]).lower()
+
+    # Cek apakah material ini masuk kategori tertentu (substring match)
     for kategori, trigger_list in kategori_map.items():
-        if row["NAMA MATERIAL"] in trigger_list and kategori != current_category:
-            # Tulis kategori pekerjaan (bold, merge)
+        if any(trigger.lower() in nama_material for trigger in trigger_list) and kategori != current_category:
+            # Tulis kategori pekerjaan
             ws[f'D{current_row}'] = kategori
             ws.merge_cells(f'D{current_row}:L{current_row}')
             ws[f'D{current_row}'].font = Font(bold=True)
@@ -745,13 +746,13 @@ for _, row in df.iterrows():
             current_row += 1
             current_category = kategori
             break
+
     # Tulis data material
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
     ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
     ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
     ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
-    current_row += 1
-
+    current_row += 
 # Tambahkan total anggaran ke KL60
 try:
     ws["K60"] = total_anggaran
