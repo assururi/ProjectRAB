@@ -728,9 +728,8 @@ start_row = 11
 current_row = start_row
 current_category = None
 
-for _, row in df.iterrows():
-    ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
-    row_num += 1
+for i, (_, row) in enumerate(df.iterrows()):
+    row_num = start_row + i
     # Cari kategori dari material
     for kategori, trigger_list in kategori_map.items():
         if row["NAMA MATERIAL"] in trigger_list and kategori != current_category:
