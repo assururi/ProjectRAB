@@ -727,6 +727,11 @@ start_row = 11
 
 current_row = start_row
 current_category = None
+def safe_float(value):
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return 0  # atau None jika mau kosong di Excel
 
 for i, (_, row) in enumerate(df.iterrows()):
     row_num = start_row + i
