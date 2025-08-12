@@ -724,20 +724,20 @@ kategori_map = {
 
 # Mulai menulis dari baris 43
 start_row = 11
-
 current_row = start_row
 current_category = None
+
 def safe_float(value):
     try:
         return float(value)
     except (ValueError, TypeError):
         return 0  # atau None jika mau kosong di Excel
 
-for i, (_, row) in enumerate(df.iterrows()):
-    row_num = start_row + i
-    # Cari kategori dari material
+for _, row in df.iterrows():
+    # Cek apakah material ini masuk kategori tertentu
     for kategori, trigger_list in kategori_map.items():
         if row["NAMA MATERIAL"] in trigger_list and kategori != current_category:
+            # Tulis kategori pekerjaan (bold, merge)
             ws[f'D{current_row}'] = kategori
             ws.merge_cells(f'D{current_row}:L{current_row}')
             ws[f'D{current_row}'].font = Font(bold=True)
@@ -745,10 +745,12 @@ for i, (_, row) in enumerate(df.iterrows()):
             current_row += 1
             current_category = kategori
             break
-    ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
-    ws[f'I{row_num}'] = float(row["KEBUTUHAN"])
-    ws[f'J{row_num}'] = float(row["HARGA SATUAN"])
-    ws[f'L{row_num}'] = float(row["TOTAL HARGA"])
+    # Tulis data material
+    ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
+    ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
+    ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
+    ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
+    current_row += 1
 
 # Tambahkan total anggaran ke KL60
 try:
