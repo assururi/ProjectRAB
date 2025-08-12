@@ -729,7 +729,7 @@ current_row = start_row
 current_category = None
 
 for _, row in df.iterrows():
-    material = str(row["NAMA MATERIAL"])
+    ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
     row_num += 1
     # Cari kategori dari material
     for kategori, trigger_list in kategori_map.items():
