@@ -689,6 +689,7 @@ with col_vis:
 
 import openpyxl
 from io import BytesIO
+from openpyxl.styles import Font, Alignment
 
 # Load template Excel dari dictionary atau path lokal
 template_path = "Bagian_Gardu/TemplateRAB_Percobaan1.xlsx"  # sesuaikan lokasi jika dari dictionary
