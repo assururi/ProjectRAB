@@ -710,11 +710,36 @@ output = BytesIO()
 wb = load_workbook(template_path)
 ws = wb.active
 
+kategori_map = {
+    "JASA SUTM": ["Pasang TM - 1 B/H ( TIANG TUMPU )"],
+    "JASA GARDU DISTRIBUSI": ["Pasang rangka gardu Portal"],
+    "LAIN - LAIN": ["Tagging GPS"],
+    "TIANG BETON": ["TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir"],
+    "MATERIAL KABEL": ["CONDUCTOR;AAAC-S;150mm2;"],
+    "MATERIAL PERLENGKAPAN GARDU": ["TRF DIS;D3;20kV/400V;3P;250kVA;DYN5;OD"],
+    "MATERIAL PERLENGKAPAN JARINGAN": ["Line Post;24kV;12,5kN;Polimer SIR"],
+    "MATERIAL PELINDUNG/PENGONTROL": ["LA;20-24kV;K;10kA;POLYMER;;"]
+}
+
 # Mulai menulis dari baris 43
 start_row = 11
 
-for i, (_, row) in enumerate(df.iterrows()):
-    row_num = start_row + i
+current_row = start_row
+current_category = None
+
+for _, row in df.iterrows():
+    material = str(row["NAMA MATERIAL"])
+    
+    # Cari kategori dari material
+    for kategori, trigger_list in kategori_map.items():
+        if material in trigger_list and kategori != current_category:
+            ws[f'D{current_row}'] = kategori
+            ws.merge_cells(f'D{current_row}:L{current_row}')
+            ws[f'D{current_row}'].font = Font(bold=True)
+            ws[f'D{current_row}'].alignment = Alignment(horizontal="left")
+            current_row += 1
+            current_category = kategori
+            break
     ws[f'D{row_num}'] = str(row["NAMA MATERIAL"])
     ws[f'I{row_num}'] = float(row["KEBUTUHAN"])
     ws[f'J{row_num}'] = float(row["HARGA SATUAN"])
