@@ -733,7 +733,7 @@ for _, row in df.iterrows():
     row_num += 1
     # Cari kategori dari material
     for kategori, trigger_list in kategori_map.items():
-        if material in trigger_list and kategori != current_category:
+        if row["NAMA MATERIAL"] in trigger_list and kategori != current_category:
             ws[f'D{current_row}'] = kategori
             ws.merge_cells(f'D{current_row}:L{current_row}')
             ws[f'D{current_row}'].font = Font(bold=True)
