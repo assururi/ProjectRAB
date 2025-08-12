@@ -730,7 +730,7 @@ current_category = None
 
 for _, row in df.iterrows():
     material = str(row["NAMA MATERIAL"])
-    
+    row_num += 1
     # Cari kategori dari material
     for kategori, trigger_list in kategori_map.items():
         if material in trigger_list and kategori != current_category:
