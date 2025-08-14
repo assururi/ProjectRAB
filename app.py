@@ -627,8 +627,7 @@ if selected_gardu == "Gardu Portal":
 elif selected_gardu == "Gardu Cantol":
     pilihan_jumlah = [0, 1, 2, 3]
 else:
-    df_numeric = pd.concat([df_numeric, df_dropdown], ignore_index=True)
-    df_dropdown = pd.DataFrame(columns=df_dropdown.columns)  # kosongkan dropdown
+    pilihan_jumlah = [x * 0.5 for x in range(2, 201)]  # 1.0, 1.5, 2.0, ..., 100.0
 
 
 # =========================
