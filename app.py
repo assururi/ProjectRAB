@@ -721,7 +721,8 @@ template_path = "Bagian_Gardu/TemplateRAB_Percobaan1.xlsx"  # sesuaikan lokasi j
 
 # Hitung ulang total harga
 edited_df["HARGA SATUAN"] = edited_df["NAMA MATERIAL"].map(material_dict)
-edited_df["KEBUTUHAN"] = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0)
+#edited_df["KEBUTUHAN"] = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0)
+edited_df["KEBUTUHAN"] = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0).astype(float)
 edited_df["TOTAL HARGA"] = edited_df["KEBUTUHAN"] * edited_df["HARGA SATUAN"]
 
 df = edited_df.copy()
