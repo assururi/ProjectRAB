@@ -686,7 +686,7 @@ with col_vis:
     canvas_size = (600, 600)
     canvas = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
 
-    kebutuhan_terisi = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0).astype(int).sum()
+    kebutuhan_terisi = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0).astype(float).sum()
 
     if kebutuhan_terisi == 0:
         st.warning("Silakan masukkan jumlah kebutuhan pada tabel untuk melihat visualisasi komponen gardu.")
