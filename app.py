@@ -626,8 +626,6 @@ if selected_gardu == "Gardu Portal":
     pilihan_jumlah = [0, 1, 2, 3, 4]
 elif selected_gardu == "Gardu Cantol":
     pilihan_jumlah = [0, 1, 2, 3]
-else:
-    pilihan_jumlah = [0, 1]  # default untuk tipe lain
 
 
 
