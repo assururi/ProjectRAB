@@ -583,6 +583,9 @@ image_file = gardu_data[selected_gardu]["image"]
 # LOGIKA PEMISAHAN INPUT
 # =========================
 def is_length_based(item_name: str) -> bool:
+
+    if kategori_gardu.lower() == "gardu tembok":
+        return False
     keywords = ["CABLE", "CONDUCTOR", "N2XSY", "NYY", "AAAC"]
     upper_name = item_name.upper()
     return any(k in upper_name for k in keywords)
