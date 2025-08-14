@@ -525,6 +525,11 @@ urutan_layer_per_gardu = {
         "Penomoran Tiang TM",
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL"
     ],
+    "Gardu Tembook": [
+        "Isolator Tumpu 20 kV",
+        "Lightning Arrester",
+        "Trafo 100 kVA"
+    ],
     "Gardu Portal": [
         "Pembuatan pondasi gardu Portal",
         "Pasang rangka gardu Portal",
