@@ -525,10 +525,11 @@ urutan_layer_per_gardu = {
         "Penomoran Tiang TM",
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL"
     ],
-    "Gardu Tembook": [
-        "Isolator Tumpu 20 kV",
-        "Lightning Arrester",
-        "Trafo 100 kVA"
+    "Gardu Tembok": [
+        "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)",
+        "PASANG GROUND FAULT DETECTOR (GFD) DI GARDU TEMBOK",
+        "PASANG PHBTR INDOOR 4 JURUSAN / 6 JURUSAN",
+        "PEMASANGAN KABEL NYY DARI TRAFO KE PHBTR DI GARDU TEMBOK",
     ],
     "Gardu Portal": [
         "Pembuatan pondasi gardu Portal",
