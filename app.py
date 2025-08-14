@@ -603,11 +603,11 @@ numeric_items  = [m for m in df_input["NAMA MATERIAL"] if is_length_based(m)]
 
 df_dropdown = pd.DataFrame({
     "NAMA MATERIAL": dropdown_items, 
-    "KEBUTUHAN": [0] * len(dropdown_items)
+    "KEBUTUHAN": [0.0] * len(dropdown_items)
 })
 df_numeric  = pd.DataFrame({
     "NAMA MATERIAL": numeric_items,  
-    "KEBUTUHAN": [0] * len(numeric_items)
+    "KEBUTUHAN": [0.0] * len(numeric_items)
 })
 
 
