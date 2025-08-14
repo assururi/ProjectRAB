@@ -786,7 +786,10 @@ for _, row in df.iterrows():
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
     
     if any(trigger.lower() in nama_material for trigger in kategori_map_kebutuhan):
-        ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H jika trigger
+    pindah_ke_h = True  # aktifkan flag kalau ketemu patokan
+    
+    if pindah_ke_h:
+        ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H mulai dari sini
     else:
         ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])  # default kolom I
     
