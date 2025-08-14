@@ -628,7 +628,7 @@ elif selected_gardu == "Gardu Cantol":
     pilihan_jumlah = [0, 1, 2, 3]
 else:
     # bebas, float 1.0 sampai 100.0 (kelipatan 0.5 misalnya)
-    pilihan_jumlah = [x * 0.5 for x in range(2, 201)]  # 1.0, 1.5, 2.0, ..., 100.0
+    pilihan_jumlah = [x * 0.1 for x in range(2, 201)]  # 1.0, 1.5, 2.0, ..., 100.0
 
 
 # =========================
