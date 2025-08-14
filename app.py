@@ -752,6 +752,10 @@ kategori_map = {
     "MATERIAL PELINDUNG/PENGONTROL": ["LA;20-24kV;K;10kA;POLYMER;;"],
     "MATERIAL PELINDUNG/PENGONTROL": ["FUSE;20/24kV;16A;TUBE;D24mm"]
 }
+kategori_map_kebutuhan = [
+    "CABLE PWR;N2XSY;1X35mm2;20kV;UG",
+    "TIANG BETON"
+]
 
 start_row = 11
 current_row = start_row
@@ -780,7 +784,13 @@ for _, row in df.iterrows():
 
     # Tulis data material
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
-    ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
+    
+    if any(trigger.lower() in nama_material for trigger in kategori_map_kebutuhan):
+        ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H jika trigger
+    else:
+        ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])  # default kolom I
+    
+    #ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
     ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
     ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
     current_row += 1
