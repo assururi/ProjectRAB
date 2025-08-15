@@ -306,15 +306,6 @@ gardu_data = {
             "CUT OUT ACC;FUSE LINK 26 kV 8A": 19980
         },
         "image": "Bagian_Gardu/GarduPortalRevisi/GARDU PORTAL-Full lengkap GP.drawio.png"
-    },
-    "Gardu Garpor": {
-        "material dan jasa": {
-            "Pasang Trafo 200 - 250 kVA": 795390,
-            "Pasang rangka gardu Portal": 525186,
-            "Pasang Arrester + Jumper": 46824,
-            "Pasang Cover Arrester": 10485,
-        },
-        "image": "/content/drive/MyDrive/Bagian_Gardu/GarduGarpor/StrukturGarduGarpor.jpg"
     }
 }
 
@@ -406,12 +397,6 @@ gambat_material_per_gardu = {
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 1 GP.drawio.png",
             "Bagian_Gardu/GarduPortalRevisi/Copy of GARDU PORTAL-TIANG BETON BULAT 12m_350 daN (terpasang) + Lansir 2 GP.drawio.png"
         ]
-    },
-    "Gardu Garpor":{
-        "Pasang Trafo 200 - 250 kVA": "path_image",
-        "Pasang rangka gardu Portal": "path_image",
-        "Pasang Arrester + Jumper": "path_image",
-        "Pasang Cover Arrester": "path_image",
     }
 }
 # Jumlah maksimal per material untuk Gardu Portal
@@ -492,14 +477,6 @@ pilihan_jumlah_per_material = {
             "LA;24-24kV;1kA;Polymer": [0,1,2,3],
             "CUT OUT;24kV;6-100A;POLYMER-125kV": [0,1,2,3],
             "CUT OUT ACC;FUSE LINK 26 kV 8A": [19980]
-        }
-    },
-    "Gardu Garpor": {
-        "material dan jasa": {
-            "Pasang Trafo 200 - 250 kVA": 795390,
-            "Pasang rangka gardu Portal": 525186,
-            "Pasang Arrester + Jumper": 46824,
-            "Pasang Cover Arrester": 10485,
         }
     }
 }
