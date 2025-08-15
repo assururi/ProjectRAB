@@ -767,6 +767,9 @@ def safe_float(value):
     except (ValueError, TypeError):
         return 0
 
+# Flag pindah kolom
+pindah_ke_h = False  # letakkan sebelum loop for
+
 for _, row in df.iterrows():
     nama_material = str(row["NAMA MATERIAL"]).lower()
 
