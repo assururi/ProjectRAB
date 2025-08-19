@@ -317,8 +317,7 @@ gambat_material_per_gardu = {
         "PLAT LANTAI KABEL LKP PENUTUP LUBANG DENGAN AQUAPROOF":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Lantai GT.drawio.png",
         "PEMASANGAN INSTALASI PENTANAHAN DI GARDU TEMBOK":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Pentanahan GT.drawio.png",
         "PASANG TRAFO 400 kVA GARDU TEMBOK":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Trafo GT.drawio.png",
-        "LVSB;DIST;3P;380V;1000A;6LINE;ID":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-LVSB GT.drawio.png",
-        "Dasar Gardu Tembok":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Pondasi GT.drawio.png"
+        "LVSB;DIST;3P;380V;1000A;6LINE;ID":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-LVSB GT.drawio.png"
     },
     "Gardu Cantol": {
         "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B_H ( TIANG TUMPU ) GC.png",
@@ -508,7 +507,6 @@ urutan_layer_per_gardu = {
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL"
     ],
     "Gardu Tembok": [
-        "Dasar Gardu Tembok",
         "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)",
         "LVSB;DIST;3P;380V;1000A;6LINE;ID",
         "PASANG PHBTR INDOOR 4 JURUSAN / 6 JURUSAN",
