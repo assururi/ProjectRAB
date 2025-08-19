@@ -252,7 +252,7 @@ gardu_data = {
             "CUB;N ISO;TP;24KV;630A;16KA":  52455940,
             "LVSB;DIST;3P;380V;1000A;6LINE;ID":  49252470,
             "INDIKATOR GANGGUAN KABEL BAWAH TANAH (GFD)":  1560000,
-            "FUSE;20/24kV;16A;TUBE;D24mm":  1564779,
+            "FUSE;20/24kV;16A;TUBE;D24mm":  1564779
         },
         "image": "/content/drive/MyDrive/Bagian_Gardu/GarduTembok/StukturGarduTembok.JPG"
     },
@@ -311,9 +311,14 @@ gardu_data = {
 
 gambat_material_per_gardu = {
     "Gardu Tembok": {
-        "Isolator Tumpu 20 kV": "path_image",
-        "Lightning Arrester": "path_iamge",
-        "Trafo 100 kVA": "path_image",
+        "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Cubicle GT.drawio.png",
+        "PASANG PHBTR INDOOR 4 JURUSAN / 6 JURUSAN":   "Bagian_Gardu/GarduTembok/GARDU TEMBOK-PHBTR GT.drawio.png",
+        "PEMASANGAN KABEL NYY DARI TRAFO KE PHBTR DI GARDU TEMBOK":   "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Kabel Trafo PHBTR GT.drawio.png",
+        "PLAT LANTAI KABEL LKP PENUTUP LUBANG DENGAN AQUAPROOF":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Lantai GT.drawio.png",
+        "PEMASANGAN INSTALASI PENTANAHAN DI GARDU TEMBOK":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Pentanahan GT.drawio.png",
+        "PASANG TRAFO 400 kVA GARDU TEMBOK":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Trafo GT.drawio.png",
+        "LVSB;DIST;3P;380V;1000A;6LINE;ID":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-LVSB GT.drawio.png",
+        "Dasar Gardu Tembok":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Pondasi GT.drawio.png"
     },
     "Gardu Cantol": {
         "Pasang TM - 1 B/H ( TIANG TUMPU )": "Bagian_Gardu/GarduCantolRevisi/Copy of GARDU CANTOL-TM - 1 B_H ( TIANG TUMPU ) GC.png",
@@ -503,10 +508,15 @@ urutan_layer_per_gardu = {
         "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL"
     ],
     "Gardu Tembok": [
+        "Dasar Gardu Tembok",
         "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)",
-        "PASANG GROUND FAULT DETECTOR (GFD) DI GARDU TEMBOK",
+        "LVSB;DIST;3P;380V;1000A;6LINE;ID",
         "PASANG PHBTR INDOOR 4 JURUSAN / 6 JURUSAN",
+        "PASANG TRAFO 400 kVA GARDU TEMBOK",
         "PEMASANGAN KABEL NYY DARI TRAFO KE PHBTR DI GARDU TEMBOK",
+        "PLAT LANTAI KABEL LKP PENUTUP LUBANG DENGAN AQUAPROOF",
+        "PEMASANGAN INSTALASI PENTANAHAN DI GARDU TEMBOK"
+
     ],
     "Gardu Portal": [
         "Pembuatan pondasi gardu Portal",
