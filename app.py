@@ -771,10 +771,10 @@ for _, row in df.iterrows():
     
     if pindah_ke_h:
         ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H mulai dari sini
-        ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
+        ws[f'K{current_row}'] = safe_float(row["TOTAL HARGA"])
     else:
         ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])  # default kolom I
-        ws[f'K{current_row}'] = safe_float(row["TOTAL HARGA"])
+        ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
     
     #ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
     ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
