@@ -670,6 +670,13 @@ with col_vis:
 
     canvas_size = (600, 600)
     canvas = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
+    if selected_gardu == "Gardu Tembok":    
+        try:
+            dasar_path = "Bagian_Gardu/GarduTembok/StukturGarduTembok.JPG"  # ganti dengan path asli
+            dasar_layer = Image.open(dasar_path).convert("RGBA").resize(canvas_size)
+            canvas = Image.alpha_composite(canvas, dasar_layer)
+        except Exception as e:
+            st.warning(f"Gagal load gambar dasar gardu tembok: {e}")
 
     kebutuhan_terisi = pd.to_numeric(edited_df["KEBUTUHAN"], errors="coerce").fillna(0).astype(float).sum()
 
@@ -691,7 +698,7 @@ with col_vis:
                         canvas = Image.alpha_composite(canvas, layer)
                     except Exception as e:
                         st.warning(f"Gagal load gambar: {nama} ({path}) → {e}")
-
+            
         if canvas:
             buf = io.BytesIO()
             canvas.save(buf, format="PNG")
