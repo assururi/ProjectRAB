@@ -702,7 +702,7 @@ with col_vis:
     if canvas:
         buf = io.BytesIO()
         canvas.save(buf, format="PNG")
-        st.image(buf.getvalue(), caption=f"Rekonstruksi Gardu {selected_gardu}", width=400)
+        st.image(buf.getvalue(), caption=f"Rekonstruksi {selected_gardu}", width=400)
 
 import openpyxl
 from io import BytesIO
