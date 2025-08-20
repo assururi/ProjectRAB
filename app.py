@@ -699,10 +699,10 @@ with col_vis:
                     except Exception as e:
                         st.warning(f"Gagal load gambar: {nama} ({path}) → {e}")
             
-        if canvas:
-            buf = io.BytesIO()
-            canvas.save(buf, format="PNG")
-            st.image(buf.getvalue(), caption=f"Rekonstruksi Gardu {selected_gardu}", width=400)
+    if canvas:
+        buf = io.BytesIO()
+        canvas.save(buf, format="PNG")
+        st.image(buf.getvalue(), caption=f"Rekonstruksi Gardu {selected_gardu}", width=400)
 
 import openpyxl
 from io import BytesIO
