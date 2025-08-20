@@ -672,7 +672,7 @@ with col_vis:
     canvas = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
     if selected_gardu == "Gardu Tembok":    
         try:
-            dasar_path = "Bagian_Gardu/GarduTembok/StukturGarduTembok.JPG"  # ganti dengan path asli
+            dasar_path = "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Pondasi GT.drawio.png"  # ganti dengan path asli
             dasar_layer = Image.open(dasar_path).convert("RGBA").resize(canvas_size)
             canvas = Image.alpha_composite(canvas, dasar_layer)
         except Exception as e:
