@@ -883,7 +883,12 @@ satuan_data_gardu_normalized = {
 for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
+    # DEBUG: tampilkan key yang tersedia dan key yang sedang dicari
+    st.write("📌 Sedang cari:", nama_material.lower().strip())
+    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10])
     satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(nama_material, "") #test subject
+
+    
     
     ws[f'G{current_row}'] = satuan
     
