@@ -891,9 +891,11 @@ for _, row in df.iterrows():
         pindah_ke_k = True  # Patokan untuk total harga
         
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
-    satuan_dict = satuan_data_gardu.get(selected_gardu, {})
-    satuan = satuan_dict.get(row["NAMA MATERIAL"], satuan_dict.get(nama_material, ""))
+    satuan = satuan_data_gardu.get(selected_gardu, {}).get(str(row["NAMA MATERIAL"]), "")
     ws[f'G{current_row}'] = satuan
+    #satuan_dict = satuan_data_gardu.get(selected_gardu, {})
+    #satuan = satuan_dict.get(row["NAMA MATERIAL"], satuan_dict.get(nama_material, ""))
+    #ws[f'G{current_row}'] = satuan
     
     if pindah_ke_h:
         ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H mulai dari sini
