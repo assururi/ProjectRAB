@@ -961,7 +961,9 @@ custom_button = f"""
 """
 
 st.markdown(custom_button, unsafe_allow_html=True)
-
+if not satuan:  # kalau kosong
+    st.write("❌ Tidak ketemu:", repr(nama_material))
+    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10]
 # Tombol Download
 st.download_button(
     label="Download Laporan RAB (Excel)",
@@ -970,6 +972,4 @@ st.download_button(
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
 
-if not satuan:  # kalau kosong
-    st.write("❌ Tidak ketemu:", repr(nama_material))
-    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10])
+)
