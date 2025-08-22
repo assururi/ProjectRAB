@@ -310,6 +310,107 @@ gardu_data = {
     }
 }
 
+Satuan_data_gardu= {
+    "Gardu Cantol": {
+        "Pasang TM - 1 B/H ( TIANG TUMPU )": "set",
+        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "bh",
+        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "set",
+        "Penomoran Tiang TM": "btg",
+        "Pasang rangka gardu Cantol": "set",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Cantol": "set",
+        "Pasang trafo 100 kVA": "bh",
+        "Pasang Arrester + Jumper": "bh",
+        "Pasang Cut Out + Jumper": "bh",
+        "Pasang Cover Arrester": "bh",
+        "Pasang Cover Cut Out": "bh",
+        "Pasang Cover Bushing Trafo": "bh",
+        "Pembuatan pondasi gardu Cantol": "bh",
+        "Pembuatan Nama dan logo gardu": "set",
+        "Pasang Pentanahan TM Gardu Cantol": "set",
+        "Pasang Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat": "METER",
+        "Pasang Kbl Single Core 20 kV lengkap Pipa Pelindung": "METER",
+        "Tagging GPS": "ttk",
+        "Dokumentasi / Foto 1 album": "ls",
+        "Biaya Ongkos Angkut material Pick Up": "ls",
+        "Biaya Gambar Pelaksanaan Pada Millar / Kalkir 60 mikron A1 (Blue Print 4 lbr)": "ls",
+        "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": "btg",
+        "CONDUCTOR;AAAC-S;70mm2": "m",
+        "CABLE PWR;N2XSY 1x35mm2;20kV;UG": "m",
+        "CABLE PWR;NYY;1X70mm2;0,6/1kV;OH": "m",
+        "CABLE PWR;NYY;1X120mm2;0,6/1kV;OH": "m",
+        "CABLE PWR ACC;CABLE SHOE CU ID 1H 70mm2": "bh",
+        "CABLE PWR ACC;CABLE SHOE CU ID 1H 240mm2": "bh",
+        "CABLE PWR ACC;CABLE SHOE AL ID 1H 70mm2": "bh",
+        "CUT 20kV;24kV;R-VO;7-B;70-150mm2;PRS": "bh",
+        "TRA DIS;24kV;400/230;25kVA;DYNS;00": "bh",
+        "LVSB;DIST;3P;400V;250A;2Line;OH": "bh",
+        "Line Post;24kV;12.5kN;Polymer SIR": "set",
+        "Insulated Top Ties": "bh",
+        "LA;24-24kV;1kA;Polymer": "SET",
+        "CUT OUT;24kV;100A;Polymer-125kV": "SET",
+    },
+    "Gardu Tembok": {
+        "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)": "SET",
+        "PASANG GROUND FAULT DETECTOR (GFD) DI GARDU TEMBOK": "SET",
+        "PASANG PHBTR INDOOR 4 JURUSAN / 6 JURUSAN": "BH",
+        "PEMASANGAN KABEL NYY DARI TRAFO KE PHBTR DI GARDU TEMBOK": "M",
+        "PASANG SINGLE-CORE, INDORESIN & ELASTIMOLD": "SET",
+        "PEMASANGAN INSTALASI PENTANAHAN DI GARDU TEMBOK": "SET",
+        "PLAT LANTAI KABEL LKP PENUTUP LUBANG DENGAN AQUAPROOF": "CELL",
+        "PASANG TRAFO 400 kVA GARDU TEMBOK": "BH",
+        "CONDUCTOR;CU;50MM2;19.28KN": "M",
+        "CONN;;PG;CU;50MM2;BOLT": "BH",
+        "PEMBUATAN GAMBAR PELAKSANAAN PADA KERTAS HVS 80 MGs UKURAN A3 ( 4 LEMBAR )": "SET",
+        "FOTO DOKUMENTASI": "SET",
+        "CABLE PWR;N2XSY;1X35mm2;20kV;UG": "M",
+        "CABLE PWR;NYY;1X240mm2;0,6/1kV;OH": "M",
+        "CABLE PWR ACC;CABLE SHOE CU ID 1H 240mm2": "BH",
+        "TRF DIS;D3;20KV/400V;3P;400KVA;DYN5;ID": "UNIT",
+        "CUB;N ISO;TP;24KV;630A;16KA": "SET",
+        "LVSB;DIST;3P;380V;1000A;6LINE;ID": "SET",
+        "INDIKATOR GANGGUAN KABEL BAWAH TANAH (GFD)": "BH",
+        "FUSE;20/24kV;16A;TUBE;D24mm": "BH",
+    },
+    "Gardu Portal": {
+        "Pasang TM - 1 B/H ( TIANG TUMPU )": "set",
+        "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": "bh",
+        "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": "set",
+        "Penomoran Tiang TM": "btg",
+        "Pasang rangka gardu Portal": "set",
+        "Pemasangan hardware, isolator, pipa, PGTM/TR Portal": "bh",
+        "Pasang trafo 200 - 250 kVA": "bh",
+        "Pasang Arrester + Jumper": "bh",
+        "Pasang Cut Out + Jumper": "bh",
+        "Pasang Cover Arrester": "bh",
+        "Pasang Cover Cut Out": "bh",
+        "Pasang Cover Bushing Trafo": "bh",
+        "Pembuatan pondasi gardu Portal": "bh",
+        "Pembuatan Nama dan logo gardu": "set",
+        "Pasang Pentanahan Ganda TM Gardu Portal": "set",
+        "Pasang Kabel Naik TR & Pipa Pelindung untuk Jurusan Baru lengkap perbaikan Rabat": "set",
+        "Tagging GPS": "ttk",
+        "Dokumentasi / Foto 1 album": "ls",
+        "Biaya Ongkos Angkut material Pick Up": "ls",
+        "Biaya Gambar Pelaksanaan Pada Millar / Kalkir 60 mikron A1 (Blue Print 4 lbr)": "ls",
+        "TIANG BETON BULAT 12m/350 daN (terpasang) + Lansir": "btg",
+        "CONDUCTOR;AAAC-S;150mm2": "m",
+        "CONDUCTOR;AAAC-S;70mm2": "m",
+        "CABLE PWR;N2XSY 1x70mm2;20kV;UG": "m",
+        "CABLE PWR;NYY;1X240mm2;0,6/1kV;OH": "m",
+        "CABLE PWR ACC;CABLE SHOE CU ID 1H 70mm2": "bh",
+        "CABLE PWR ACC;CABLE SHOE CU ID 1H 240mm2": "bh",
+        "CABLE PWR ACC;CABLE SHOE AL ID 1H 70mm2": "bh",
+        "CONN;20kV;24kV;H-35-70/70-150mm2;PRS": "bh",
+        "TRF DIS;24kV;400/230;25kVA;DYNS;00": "unit",
+        "LVSB;DIST;3P;400V;630A;4Line;OD": "set",
+        "Line Post;24kV;12.5kN;Polymer SIR": "set",
+        "INSULATED TOP TIES": "bh",
+        "LA;24-24kV;1kA;Polymer": "bh",
+        "CUT OUT;24kV;6-100A;POLYMER-125kV": "bh",
+        "CUT OUT ACC;FUSE LINK 26 kV 8A": "bh"
+    }
+}
+
 gambat_material_per_gardu = {
     "Gardu Tembok": {
         "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)":  "Bagian_Gardu/GarduTembok/GARDU TEMBOK-Cubicle GT.drawio.png",
@@ -762,10 +863,10 @@ def safe_float(value):
 
 # Flag pindah kolom
 pindah_ke_h = False  # letakkan sebelum loop for
-
+satuan = satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
 for _, row in df.iterrows():
     nama_material = str(row["NAMA MATERIAL"]).lower()
-
+    ws[f'G{current_row}'] = satuan
     # Cek apakah material ini masuk kategori tertentu (substring match)
     for kategori, trigger_list in kategori_map.items():
         if any(trigger.lower() in nama_material for trigger in trigger_list) and kategori != current_category:
