@@ -863,6 +863,11 @@ def safe_float(value):
 
 # Flag pindah kolom
 pindah_ke_h = False  # letakkan sebelum loop for
+# --- safeguard kalau belum ada variabel satuan_data_gardu ---
+try:
+    _ = satuan_data_gardu
+except NameError:
+    satuan_data_gardu = {}
 for _, row in df.iterrows():
     nama_material = str(row["NAMA MATERIAL"]).lower()
     satuan = Satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
@@ -886,7 +891,9 @@ for _, row in df.iterrows():
         pindah_ke_k = True  # Patokan untuk total harga
         
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
-    
+    satuan_dict = satuan_data_gardu.get(selected_gardu, {})
+    satuan = satuan_dict.get(row["NAMA MATERIAL"], satuan_dict.get(nama_material, ""))
+    ws[f'G{current_row}'] = satuan
     
     if pindah_ke_h:
         ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H mulai dari sini
