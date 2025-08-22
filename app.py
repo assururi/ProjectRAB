@@ -774,7 +774,7 @@ for _, row in df.iterrows():
             ws.merge_cells(f'D{current_row}:L{current_row}')
             ws[f'D{current_row}'].font = Font(bold=True)
             ws[f'D{current_row}'].alignment = Alignment(horizontal="left")
-            ws[f'D{current_row}'].fill = PatternFill(start_color="BDD7EE", end_color="BDD7EE", fill_type="solid")
+            ws[f'D{current_row}'].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
             current_row += 1
             current_category = kategori
             break
@@ -782,16 +782,17 @@ for _, row in df.iterrows():
     # Tulis data material
     if any(trigger.lower() in nama_material for trigger in kategori_map_kebutuhan):
         pindah_ke_h = True  # aktifkan flag kalau ketemu patokan
+        pindah_ke_k = True  # Patokan untuk total harga
         
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
     
     
     if pindah_ke_h:
         ws[f'H{current_row}'] = safe_float(row["KEBUTUHAN"])  # pindah kolom H mulai dari sini
-        ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
+        #ws[f'L{current_row}'] = safe_float(row["TOTAL HARGA"])
     else:
         ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])  # default kolom I
-        ws[f'K{current_row}'] = safe_float(row["TOTAL HARGA"])
+       # ws[f'K{current_row}'] = safe_float(row["TOTAL HARGA"])
     
     #ws[f'I{current_row}'] = safe_float(row["KEBUTUHAN"])
     ws[f'J{current_row}'] = safe_float(row["HARGA SATUAN"])
