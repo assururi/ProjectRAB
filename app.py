@@ -868,10 +868,13 @@ try:
     _ = satuan_data_gardu
 except NameError:
     satuan_data_gardu = {}
+    
 for _, row in df.iterrows():
-    nama_material = str(row["NAMA MATERIAL"]).lower()
+    #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
+    nama_material = str(row["NAMA MATERIAL"]).strip().lower()
     satuan = Satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
     ws[f'G{current_row}'] = satuan
+    
     # Cek apakah material ini masuk kategori tertentu (substring match)
     for kategori, trigger_list in kategori_map.items():
         if any(trigger.lower() in nama_material for trigger in trigger_list) and kategori != current_category:
@@ -893,6 +896,7 @@ for _, row in df.iterrows():
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
     satuan = satuan_data_gardu.get(selected_gardu, {}).get(str(row["NAMA MATERIAL"]), "")
     ws[f'G{current_row}'] = satuan
+    
     #satuan_dict = satuan_data_gardu.get(selected_gardu, {})
     #satuan = satuan_dict.get(row["NAMA MATERIAL"], satuan_dict.get(nama_material, ""))
     #ws[f'G{current_row}'] = satuan
@@ -913,7 +917,7 @@ try:
     ws["K60"].number_format = '#,##0'  # supaya format ribuan rapi
 except ValueError:
     st.warning("Sel K60 tidak bisa diisi, pastikan format sel di Excel sesuai.")
-
+    
 # Tampilan DataFrame dan total anggaran
 st.markdown(f"### **Total Anggaran: Rp {total_anggaran:,.0f}**")
 st.markdown("### Tabel RAB")
