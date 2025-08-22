@@ -884,8 +884,6 @@ for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
     # DEBUG: tampilkan key yang tersedia dan key yang sedang dicari
-    st.write("📌 Sedang cari:", nama_material.lower().strip())
-    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10])
     satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(nama_material, "") #test subject
 
     
@@ -966,9 +964,7 @@ custom_button = f"""
 """
 
 st.markdown(custom_button, unsafe_allow_html=True)
-if not satuan:  # kalau kosong
-    st.write("❌ Tidak ketemu:", repr(nama_material))
-    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10])
+
 # Tombol Download
 st.download_button(
     label="Download Laporan RAB (Excel)",
