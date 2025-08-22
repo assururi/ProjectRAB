@@ -193,7 +193,7 @@ st.title("Dahsboard Sistem RAB Beserta Visualisasi")
 gardu_data = {
     "Gardu Cantol": {
         "material": {
-            "Pasang TM - 1 B/H ( TIANG TUMPU )": 105620,
+            "Pasang TM - 1 B/H ( TIANG TUMPU )": [105620, "Set"],
             "PENGADAAN DAN PEMASANGAN PENGHALANG PANJAT": 72126,
             "PENGADAAN DAN PEMASANGAN TANDA KILAT KECIL": 59845,
             "Penomoran Tiang TM": 13888,
