@@ -825,10 +825,10 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # TAMBAHKAN KE XLSX
 # =============== #
 # Normalisasi semua key di satuan_data_gardu jadi lowercase + strip
-satuan_data_gardu_normalized = {
-    gardu: {k.lower().strip(): v for k, v in items.items()}
-    for gardu, items in Satuan_data_gardu.items()
-}
+#satuan_data_gardu_normalized = {
+ #   gardu: {k.lower().strip(): v for k, v in items.items()}
+ #   for gardu, items in Satuan_data_gardu.items()
+#}
 
 template_path = "Bagian_Gardu/TemplateFormatRAB.xlsx"
 output = BytesIO()
