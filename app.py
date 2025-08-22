@@ -810,9 +810,32 @@ st.dataframe(df, use_container_width=True)
 wb.save(output)
 output.seek(0)  # <-- Penting!
 
+# Tombol Download dengan styling
+custom_button = f"""
+    <style>
+    .download-btn {{
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+    }}
+    .download-btn:hover {{
+        background: linear-gradient(90deg, #0056b3, #0096c7);
+        transform: scale(1.05);
+    }}
+    </style>
+"""
+
+st.markdown(custom_button, unsafe_allow_html=True)
+
 # Tombol Download
 st.download_button(
-    label="📥 Download Laporan RAB (Excel)",
+    label="Download Laporan RAB (Excel)",
     data=output,
     file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
