@@ -1,4 +1,5 @@
 from openpyxl import load_workbook
+from openpyxl.styles import PatternFill
 from io import BytesIO
 from PIL import Image
 import io
@@ -773,6 +774,7 @@ for _, row in df.iterrows():
             ws.merge_cells(f'D{current_row}:L{current_row}')
             ws[f'D{current_row}'].font = Font(bold=True)
             ws[f'D{current_row}'].alignment = Alignment(horizontal="left")
+            ws[f'D{current_row}'].fill = PatternFill(start_color="BDD7EE", end_color="BDD7EE", fill_type="solid")
             current_row += 1
             current_category = kategori
             break
