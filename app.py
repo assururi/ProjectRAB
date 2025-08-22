@@ -346,8 +346,8 @@ Satuan_data_gardu= {
         "LVSB;DIST;3P;400V;250A;2Line;OH": "bh",
         "Line Post;24kV;12.5kN;Polymer SIR": "set",
         "Insulated Top Ties": "bh",
-        "LA;24-24kV;1kA;Polymer": "SET",
-        "CUT OUT;24kV;100A;Polymer-125kV": "SET",
+        "LA;24-24kV;1kA;Polymer": "set",
+        "CUT OUT;24kV;100A;Polymer-125kV": "set",
     },
     "Gardu Tembok": {
         "PEMASANGAN CUBICLE PROTEKSI TRAFO (PB)": "SET",
@@ -884,6 +884,7 @@ for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
     satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(nama_material, "") #test subject
+    
     ws[f'G{current_row}'] = satuan
     
     # Cek apakah material ini masuk kategori tertentu (substring match)
@@ -968,3 +969,7 @@ st.download_button(
     file_name=f"laporan_rab_{selected_gardu.replace(' ', '_').lower()}.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
+
+if not satuan:  # kalau kosong
+    st.write("❌ Tidak ketemu:", repr(nama_material))
+    st.write("🔑 Key tersedia:", list(satuan_data_gardu_normalized.get(selected_gardu, {}).keys())[:10])
