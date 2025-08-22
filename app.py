@@ -824,6 +824,12 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # =============== #
 # TAMBAHKAN KE XLSX
 # =============== #
+# Normalisasi semua key di satuan_data_gardu jadi lowercase + strip
+satuan_data_gardu_normalized = {
+    gardu: {k.lower().strip(): v for k, v in items.items()}
+    for gardu, items in satuan_data_gardu.items()
+}
+
 template_path = "Bagian_Gardu/TemplateFormatRAB.xlsx"
 output = BytesIO()
 
@@ -872,7 +878,7 @@ except NameError:
 for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
-    satuan = Satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
+    satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(nama_material, "") #test subject
     ws[f'G{current_row}'] = satuan
     
     # Cek apakah material ini masuk kategori tertentu (substring match)
