@@ -885,10 +885,7 @@ for _, row in df.iterrows():
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
     # DEBUG: tampilkan key yang tersedia dan key yang sedang dicari
     satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(nama_material, "") #test subject
-
-    
-    
-    ws[f'G{current_row}'] = satuan
+    #ws[f'G{current_row}'] = satuan
     
     # Cek apakah material ini masuk kategori tertentu (substring match)
     for kategori, trigger_list in kategori_map.items():
@@ -909,6 +906,7 @@ for _, row in df.iterrows():
         pindah_ke_k = True  # Patokan untuk total harga
         
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
+    ws[f'G{current_row}'] = satuan
     #satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(str(row["NAMA MATERIAL"]), "")
     #ws[f'G{current_row}'] = satuan
     
