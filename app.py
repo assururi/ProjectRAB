@@ -827,7 +827,7 @@ total_anggaran = df["TOTAL HARGA"].sum()
 # Normalisasi semua key di satuan_data_gardu jadi lowercase + strip
 satuan_data_gardu_normalized = {
     gardu: {k.lower().strip(): v for k, v in items.items()}
-    for gardu, items in satuan_data_gardu.items()
+    for gardu, items in Satuan_data_gardu.items()
 }
 
 template_path = "Bagian_Gardu/TemplateFormatRAB.xlsx"
@@ -871,14 +871,14 @@ def safe_float(value):
 pindah_ke_h = False  # letakkan sebelum loop for
 # --- safeguard kalau belum ada variabel satuan_data_gardu ---
 try:
-    _ = satuan_data_gardu
+    _ = Satuan_data_gardu
 except NameError:
-    satuan_data_gardu = {}
+    Satuan_data_gardu = {}
 
 # Normalisasi semua key ke lowercase + strip
 satuan_data_gardu_normalized = {
     gardu: {k.lower().strip(): v for k, v in items.items()}
-    for gardu, items in satuan_data_gardu.items()
+    for gardu, items in Satuan_data_gardu.items()
 }
 for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
