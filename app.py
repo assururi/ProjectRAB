@@ -608,7 +608,7 @@ if "reset_trigger" not in st.session_state:
 
 # Pilihan dropdown sesuai gardu
 if selected_gardu == "Gardu Portal":
-    pilihan_jumlah = [0, 1, 2, 3, 4]
+    pilihan_jumlah = [0, 1, 2, 3, 4, 5, 6]
 elif selected_gardu == "Gardu Cantol":
     pilihan_jumlah = [0, 1, 2, 3]
 else:
