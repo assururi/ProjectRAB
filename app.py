@@ -863,9 +863,9 @@ def safe_float(value):
 
 # Flag pindah kolom
 pindah_ke_h = False  # letakkan sebelum loop for
-satuan = satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
 for _, row in df.iterrows():
     nama_material = str(row["NAMA MATERIAL"]).lower()
+    satuan = Satuan_data_gardu.get(selected_gardu, {}).get(nama_material, "") #test subject
     ws[f'G{current_row}'] = satuan
     # Cek apakah material ini masuk kategori tertentu (substring match)
     for kategori, trigger_list in kategori_map.items():
