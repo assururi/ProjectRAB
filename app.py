@@ -870,11 +870,16 @@ def safe_float(value):
 # Flag pindah kolom
 pindah_ke_h = False  # letakkan sebelum loop for
 # --- safeguard kalau belum ada variabel satuan_data_gardu ---
-#try:
-#    _ = satuan_data_gardu
-#except NameError:
- #   satuan_data_gardu = {}
-    
+try:
+    _ = satuan_data_gardu
+except NameError:
+    satuan_data_gardu = {}
+
+# Normalisasi semua key ke lowercase + strip
+satuan_data_gardu_normalized = {
+    gardu: {k.lower().strip(): v for k, v in items.items()}
+    for gardu, items in satuan_data_gardu.items()
+}
 for _, row in df.iterrows():
     #nama_material = str(row["NAMA MATERIAL"]).lower() # ini original
     nama_material = str(row["NAMA MATERIAL"]).strip().lower()
@@ -900,8 +905,8 @@ for _, row in df.iterrows():
         pindah_ke_k = True  # Patokan untuk total harga
         
     ws[f'D{current_row}'] = str(row["NAMA MATERIAL"])
-    satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(str(row["NAMA MATERIAL"]), "")
-    ws[f'G{current_row}'] = satuan
+    #satuan = satuan_data_gardu_normalized.get(selected_gardu, {}).get(str(row["NAMA MATERIAL"]), "")
+    #ws[f'G{current_row}'] = satuan
     
     #satuan_dict = satuan_data_gardu.get(selected_gardu, {})
     #satuan = satuan_dict.get(row["NAMA MATERIAL"], satuan_dict.get(nama_material, ""))
